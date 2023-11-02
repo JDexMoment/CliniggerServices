@@ -138,4 +138,18 @@
     border-style: solid black;
 }
 
-@media ()
+/* footer */
+
+#footer_nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 40px 10% 10px 10%; */
+    flex-direction: row;
+}
+#footer{
+    background-color: #a9eeff;
+}
+#footer_info {
+    text-align: center
+}
