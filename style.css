@@ -57,8 +57,7 @@
     bottom: 30px; /* Установил отступ снизу */
     right: 30px; /* Установил отступ справа */
     color: #fff;
-    border: none;
-    cursor: pointer;
+    border: none; 
 }
 /* Стили для кнопки Заказать услуги */
 .btn_entity {
@@ -69,6 +68,11 @@
     font-family: 'onest',Arial,sans-serif;
     border: none;
     font-size: 17px;
+    transition: background-color 0.3s /* Увеличил время анимации для плавного перехода */
+}
+.btn_entity:hover {
+    background-color: rgba(2, 166, 255, 0.8); /* Изменение цвета при наведении */
+    cursor: pointer; /* Изменение курсора при наведении */
 }
 /* Стили для текста */
 #text_gif {
