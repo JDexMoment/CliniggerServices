@@ -177,10 +177,14 @@
 
 .card {
     margin: 1.5em;
+    background-color: rgb(231, 245, 249);
+    padding: 15px;
+    border-radius: 30px;
 }
 
 .card>a>img {
     width: 100%;
+    border-radius: 30px;
 }
 
 .card>.info{
