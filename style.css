@@ -14,6 +14,7 @@
 .image_logo a img{
     width: 100px;
     height: auto;
+    border-radius: 30px;
 }
 .navigation{
     border: 2px solid black;
@@ -227,9 +228,10 @@
 }
 
 #image_container img {
-    max-width: 300px; /* Ограничивает максимальную ширину изображения */
-    height: auto; /* Поддерживает пропорции изображения */
-    margin-right: 10px; /* Добавляет немного горизонтального отступа между изображениями */
+    width: auto; /* Ограничивает максимальную ширину изображения */
+    max-height: 400px; /* Поддерживает пропорции изображения */
+    margin-right: 15px; /* Добавляет немного горизонтального отступа между изображениями */
+    border-radius: 30px;
 }
 .image_slider{
     overflow-x: auto;
@@ -242,7 +244,7 @@
     padding: 20px;
     font-family: 'onest',Arial,sans-serif;
     letter-spacing: -1.5px;
-    font-weight: 400;
+    font-weight:normal;
 }
 #name_services span{
     color: #24ccfa;
@@ -256,6 +258,13 @@
 
 .reviews_card{
     border-style: solid black;
+}
+.info {
+    text-align: center; /* Центрирование текста по горизонтали */
+    font-size: 18px; /* Увеличьте размер шрифта по вашему желанию */
+    padding: 20px;
+    font-family: 'onest',Arial,sans-serif;
+    font-weight:normal;
 }
 
 /* footer */
@@ -271,6 +280,9 @@
 }
 #footer_info {
     text-align: center
+}
+#footer_info .btn_entity {
+    margin: 20px;
 }
 #footer_bar #nav li {
     list-style: none;
