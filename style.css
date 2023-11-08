@@ -17,7 +17,7 @@
     border-radius: 30px;
 }
 .navigation{
-    border: 2px solid black;
+    background-color:#bbf1ffbc;
     border-radius: 30px;
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
     padding: 5px;
@@ -38,6 +38,7 @@
     padding: 10px;
     text-decoration: none;
     color: #000000;
+    font-family: 'onest',Arial,sans-serif;
 }
 
 /* main */
@@ -130,6 +131,7 @@
     background-color: inherit;
     font-family: inherit; /* Important for vertical align on mobile phones */
     margin: 0; /* Important for vertical align on mobile phones */
+    font-family: 'onest',Arial,sans-serif;
   }
   
   
@@ -171,9 +173,9 @@
 /* card */
 #card_container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3);    
-}
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: minmax(150px, auto);
+ }
 
 .card {
     margin: 1.5em;
