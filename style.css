@@ -229,8 +229,8 @@
 /* slider */
 .slider_container{
     position: relative;
-    width: 600px;
-    height: 400px;
+    width: 1000px;
+    height: 500px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -253,12 +253,15 @@
   border: none;
   font-size: 24px;
   color: white;
+  border-radius: 50px;
 }
-
+.prev_btn:hover,
+.next_btn:hover {
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5); /* добавлен эффект подсветки при наведении */
+}
 .prev_btn {
   left: 10px;
 }
-
 .next_btn {
   right: 10px;
 }
