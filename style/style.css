@@ -227,44 +227,57 @@
 }
 
 /* slider */
-.slider_container{
+.slider_container {
     position: relative;
-    width: 1000px;
-    height: 500px;
-    margin: 0 auto;
+    width: 90%; /* Ширина слайдера */
+    max-width: 1000px; /* Максимальная ширина слайдера */
+    height: calc(50vw); /* Высота равна половине ширины страницы */
+    margin: 20px auto; /* Отступы по краям */
     overflow: hidden;
+    border-radius: 15px; /* Скругление углов */
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); /* Тень для подчеркивания слайдера */
 }
+
 .slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    border-radius: 15px; /* Продолжение скругления углов */
 }
+
 .slider img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.prev_btn, .next_btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  background-color: transparent;
-  border: none;
-  font-size: 24px;
-  color: white;
-  border-radius: 50px;
+
+.prev_btn,
+.next_btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5%; /* Ширина кнопок относительно ширины страницы */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    background-color: transparent;
+    border: none;
+    font-size: 1.5em; /* Размер шрифта увеличен */
+    color: white;
+    border-radius: 50px;
 }
+
 .prev_btn:hover,
 .next_btn:hover {
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5); /* добавлен эффект подсветки при наведении */
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
 }
+
 .prev_btn {
-  left: 10px;
+    left: 1%; /* Отступ слева относительно ширины страницы */
 }
+
 .next_btn {
-  right: 10px;
+    right: 1%; /* Отступ справа относительно ширины страницы */
 }
+
+
 /* service name */
 #name_services{
     text-align: center; /* Центрирование текста по горизонтали */
@@ -305,6 +318,7 @@
 }
 #footer{
     background-color: #bbf1ffbc;
+    margin-top: auto;
 }
 #footer_info {
     text-align: center
@@ -317,4 +331,11 @@
 }
 #footer_bar a {
     text-decoration: none;
+}
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
