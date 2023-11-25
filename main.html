@@ -26,9 +26,6 @@
                           <a href="#">Химчистка мягкой мебели и ковролина</a>
                         </div>
                       </div>
-                    
-
-
                     <li><a href="#" class="navigation_btn">Вакансии</a></li>
                     <li><a href="#" class="navigation_btn">Контакты</a></li>
                 </ul>
@@ -36,13 +33,27 @@
         </header>
         <div id="main">
             <div id="gif_container">
-                <img id="background_gif" src="img/main_gif.jpg" alt="#">
+                <img id="background_gif" src="img/main_gif_dark.jpg" alt="#">
                 <div id="text_gif">
                     <div id="text_gif_Hight"><span>Клининговые услуги для организаций</span></div>
                     <div id="text_gif_Low"><span>В Ярославле и Ярославской области</span></div>
                 </div>
-                <div id="button_gif">
-                    <button class="btn_entity" type="button">Оставить заявку</button>
+                <!--тут у нас всплывающая при нажатии форма-->
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Высвечивающееся меню</title>                          
+                <div id="button_card">
+                    <button class="button_gif" type="button" onclick="showMenu()">Оставить заявку</button>
+                </div>
+                <div id="menuOverlay" onclick="hideMenu()">
+                    <div id="menuContent" onclick="event.stopPropagation();">
+                        <div id="text_Menu_Hight"><span>Оставьте свои контактные данные</span></div><br>
+                        <div id="text_Menu_Low"><span>Менеджер перезвонит вам как можно скорее в рабочее время, <br>
+                        проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
+                        <input type="text" id="name" placeholder="Введите ваше Имя" required><br>
+                        <input type="tel" id="phone" placeholder="Введите ваш телефон" required><br>
+                        <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
+                    </div>
                 </div>
             </div>
             <div id="information">
@@ -67,8 +78,22 @@
                         <a href=""><img src="img/card_img/uborka_v_ofise.jpg" alt=""></a>
                         <div class="info">
                             <p>уборка коммерческой недвижимости</p>
+                            <!--тут у нас всплывающая при нажатии форма-->
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>Высвечивающееся меню</title>                          
                             <div id="button_card">
-                                <button class="btn_entity" type="button">Заказать услуги</button>
+                                <button class="btn_entity" type="button" onclick="showMenu()">Заказать услуги</button>
+                            </div>
+                            <div id="menuOverlay" onclick="hideMenu()">
+                                <div id="menuContent" onclick="event.stopPropagation();">
+                                    <div id="text_Menu_Hight"><span>Оставьте свои контактные данные</span></div><br>
+                                    <div id="text_Menu_Low"><span>Менеджер перезвонит вам как можно скорее в рабочее время, <br>
+                                    проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
+                                    <input type="text" id="name" placeholder="Введите ваше Имя" required><br>
+                                    <input type="tel" id="phone" placeholder="Введите ваш телефон" required><br>
+                                    <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -76,8 +101,22 @@
                         <a href=""><img src="img/card_img/surrounding_areas.jpg" alt=""></a>
                         <div class="info">
                             <p>Уборка прилегающей территории</p>
+                            <!--тут у нас всплывающая при нажатии форма-->
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>Высвечивающееся меню</title>                          
                             <div id="button_card">
-                                <button class="btn_entity" type="button">Заказать услуги</button>
+                                <button class="btn_entity" type="button" onclick="showMenu()">Заказать услуги</button>
+                            </div>
+                            <div id="menuOverlay" onclick="hideMenu()">
+                                <div id="menuContent" onclick="event.stopPropagation();">
+                                    <div id="text_Menu_Hight"><span>Оставьте свои контактные данные</span></div><br>
+                                    <div id="text_Menu_Low"><span>Менеджер перезвонит вам как можно скорее в рабочее время, <br>
+                                    проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
+                                    <input type="text" id="name" placeholder="Введите ваше Имя" required><br>
+                                    <input type="tel" id="phone" placeholder="Введите ваш телефон" required><br>
+                                    <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -85,58 +124,45 @@
                         <a href=""><img src="img/card_img/myte_stekol_v_ofise.jpg" alt=""></a>
                         <div class="info">
                             <p>Мойка окон и витрин</p>
-
+                            <!--тут у нас всплывающая при нажатии форма-->
                             <meta charset="UTF-8">
                             <meta name="viewport" content="width=device-width, initial-scale=1.0">
                             <title>Высвечивающееся меню</title>                          
-                          <div id="button_card">
-                            <button class="btn_entity" type="button" onclick="showMenu()">Заказать услуги</button>
-                          </div>
-                          
-                          <div id="menuOverlay" onclick="hideMenu()">
-                            <div id="menuContent" onclick="event.stopPropagation();">
-                                <div id="text_Menu_Hight"><span>Оставьте свои контактные данные</span></div><br>
-                                <div id="text_Menu_Low"><span>Менеджер перезвонит вам как можно скорее в рабочее время, <br>
-                                проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
-                                <input type="text" id="name" placeholder="Введите ваше Имя" required><br>
-                                <input type="tel" id="phone" placeholder="Введите ваш телефон" required><br>
-                                <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
+                            <div id="button_card">
+                                <button class="btn_entity" type="button" onclick="showMenu()">Заказать услуги</button>
                             </div>
-                          </div>
-                          
-                          <script>
-                            function showMenu() {
-                              // Показываем высвечивающееся меню
-                              document.getElementById('menuOverlay').style.display = 'flex';
-                            }
-                          
-                            function hideMenu() {
-                              // Скрываем высвечивающееся меню
-                              document.getElementById('menuOverlay').style.display = 'none';
-                            }
-                          
-                            function submitForm() {
-                              // Здесь вы можете добавить код для отправки данных на сервер
-                              var name = document.getElementById('name').value;
-                              var phone = document.getElementById('phone').value;
-                              var service = document.getElementById('service').value;
-                          
-                              // Ваш код для отправки данных, например, через AJAX
-                              console.log('Отправка данных:', name, phone, service);
-                          
-                              // Закрываем меню после отправки
-                              hideMenu();
-                            }
-                          </script>
-
+                            <div id="menuOverlay" onclick="hideMenu()">
+                                <div id="menuContent" onclick="event.stopPropagation();">
+                                    <div id="text_Menu_Hight"><span>Оставьте свои контактные данные</span></div><br>
+                                    <div id="text_Menu_Low"><span>Менеджер перезвонит вам как можно скорее в рабочее время, <br>
+                                    проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
+                                    <input type="text" id="name" placeholder="Введите ваше Имя" required><br>
+                                    <input type="tel" id="phone" placeholder="Введите ваш телефон" required><br>
+                                    <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card">
                         <a href=""><img src="img/card_img/Dry_cleaning.jpeg" alt=""></a>
                         <div class="info">
                             <p>Химчистка мягкой мебели и ковролина</p>
+                            <!--тут у нас всплывающая при нажатии форма-->
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>Высвечивающееся меню</title>                          
                             <div id="button_card">
-                                <button class="btn_entity" type="button">Заказать услуги</button>
+                                <button class="btn_entity" type="button" onclick="showMenu()">Заказать услуги</button>
+                            </div>
+                            <div id="menuOverlay" onclick="hideMenu()">
+                                <div id="menuContent" onclick="event.stopPropagation();">
+                                    <div id="text_Menu_Hight"><span>Оставьте свои контактные данные</span></div><br>
+                                    <div id="text_Menu_Low"><span>Менеджер перезвонит вам как можно скорее в рабочее время, <br>
+                                    проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
+                                    <input type="text" id="name" placeholder="Введите ваше Имя" required><br>
+                                    <input type="tel" id="phone" placeholder="Введите ваш телефон" required><br>
+                                    <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -165,7 +191,23 @@
                 </div>
                 <div id="footer_info">
                     <p>number</p>
-                    <button class="btn_entity" type="button">Оставить заявку</button>
+                    <!--тут у нас всплывающая при нажатии форма-->
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Высвечивающееся меню</title>                          
+                    <div id="button_card">
+                        <button class="btn_entity" type="button" onclick="showMenu()">Оставить заявку</button>
+                    </div>
+                    <div id="menuOverlay" onclick="hideMenu()">
+                        <div id="menuContent" onclick="event.stopPropagation();">
+                            <div id="text_Menu_Hight"><span>Оставьте свои контактные данные</span></div><br>
+                            <div id="text_Menu_Low"><span>Менеджер перезвонит вам как можно скорее в рабочее время, <br>
+                            проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
+                            <input type="text" id="name" placeholder="Введите ваше Имя" required><br>
+                            <input type="tel" id="phone" placeholder="Введите ваш телефон" required><br>
+                            <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
+                        </div>
+                    </div>                    
                 </div>
             </div>
         </footer>

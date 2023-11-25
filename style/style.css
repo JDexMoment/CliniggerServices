@@ -54,12 +54,33 @@
     display: block;
     border-radius: 30px;
 }
+/*
 #button_gif {
     position: absolute;
-    bottom: 30px; /* Установил отступ снизу */
-    right: 30px; /* Установил отступ справа */
+    bottom: 30px; 
+    right: 30px; 
     color: #fff;
     border: none; 
+}
+*/
+.button_gif {
+    position: absolute;
+    bottom: 30px; 
+    right: 30px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(81, 206, 252);
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'onest',Arial,sans-serif;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 17px;
+    transition: background-color 0.3s
 }
 /* Стили для кнопки Заказать услуги */
 .btn_entity {
@@ -87,6 +108,8 @@
     background: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
+    transition: opacity 0.3s ease-in-out; /* Плавная анимация изменения прозрачности */
+    opacity: 0;
 }
 
 #menuContent {
@@ -95,6 +118,9 @@
     border-radius: 30px;
     text-align: center;
     line-height: 180%;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Плавные анимации изменения положения и прозрачности */
+    transform: scale(0.8);
+    opacity: 0;
 }
 #text_Menu_Hight{
     font-size: 36px;
