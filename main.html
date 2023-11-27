@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/style.css">
+
 </head>
 <body>
     <div id = "page">
@@ -51,11 +52,12 @@
                         <div id="text_Menu_Low"><span>Менеджер перезвонит вам как можно скорее в рабочее время, <br>
                         проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
 
-                        <form id="myForm" action="http://localhost:3000/submitForm" method="post"></form>
+                        <form id="myForm" action="/submitForm" method="post">
+                            <input type="text" id="name" name="name" placeholder="Введите ваше Имя" required><br>
+                            <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" required><br>
+                            <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
+                        </form>
 
-                        <input type="text" id="name" name="name" placeholder="Введите ваше Имя" required><br>
-                        <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" required><br>
-                        <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
                     </div>
                 </div>
             </div>
@@ -64,7 +66,7 @@
             </div>
             <div class="slider_container">
                 <div class="slider">
-                    <img src="img/slider_1.jpg" alt="1">
+                    <img src="img/slider_1dop.jpg" alt="1">
                     <img src="img/slider_2.jpg" alt="2">
                     <img src="img/slider_3.jpg" alt="3">
                     <img src="img/slider_4.jpg" alt="4">
@@ -94,7 +96,7 @@
                                     <div id="text_Menu_Low"><span>Менеджер перезвонит вам как можно скорее в рабочее время, <br>
                                     проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
 
-                                    <form id="myForm" action="http://localhost:3000/submitForm" method="post"></form>
+                                    <form id="myForm" action="http://localhost:3000/main.html/submitForm" method="post"></form>
 
                                     <input type="text" id="name" name="name" placeholder="Введите ваше Имя" required><br>
                                     <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" required><br>
@@ -120,7 +122,7 @@
                                     <div id="text_Menu_Low"><span>Менеджер перезвонит вам как можно скорее в рабочее время, <br>
                                     проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
 
-                                    <form id="myForm" action="http://localhost:3000/submitForm" method="post"></form>
+                                    <form id="myForm" action="/submitForm" method="post"></form>
 
                                     <input type="text" id="name" name="name" placeholder="Введите ваше Имя" required><br>
                                     <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" required><br>
@@ -232,6 +234,8 @@
             </div>
         </footer>
     </div>
+
     <script src="script/script.js"></script>
+    <script src="script/app.js"></script>
 </body>
 </html>
