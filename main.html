@@ -185,14 +185,41 @@
                     </div>
                 </div>
             </div>
-            <div id="reviews">
-                <h4>Отзывы</h4>
-                <div class="reviews_card">
-                    <p>Пользователь</p>
-                    <p>5 stars</p>
-                    <p>Все понравилось</p>
-                </div>
+
+            <div class="reviews_header">
+            <h2>Отзывы наших <span>клиентов</span></h2>
             </div>
+            
+            <div class="reviews_wrapper">
+                <div class="reviews_list">
+                    <!-- Контейнер для отзывов -->
+                    <div class="review">
+                        <div class="user_info">
+                            <p>Имя пользователя</p>
+                        </div>
+                        <div class="user_rating">
+                            <span class="rating_stars">★★★★☆</span>
+                        </div>
+                        <p class="comment">Текст отзыва...</p>
+                    </div>
+                    <!-- Другие отзывы могут быть добавлены здесь -->
+                </div>
+                <form id="review_form">
+                    <h3>Оставьте отзыв!</h3>
+                    <!-- Форма для отправки нового отзыва -->
+                    <input type="text" id="username" placeholder="Ваше имя" required>
+                    <textarea id="review_comment" placeholder="Ваш отзыв" required></textarea>
+                    <div class="rating" data-total-value="0">
+                        <div class="rating_item" data-item-value="5">★</div>
+                        <div class="rating_item" data-item-value="4">★</div>
+                        <div class="rating_item" data-item-value="3">★</div>
+                        <div class="rating_item" data-item-value="2">★</div>
+                        <div class="rating_item" data-item-value="1">★</div>
+                    </div>
+                    <button type="submit">Отправить отзыв</button>
+                </form>
+            </div>
+            
         </div>
         <footer id="footer">
             <div id="footer_nav">
@@ -237,5 +264,6 @@
 
     <script src="script/script.js"></script>
     <script src="script/app.js"></script>
+    <script src="script/ratingStarScript.js"></script>
 </body>
 </html>
