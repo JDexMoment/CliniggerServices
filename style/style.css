@@ -235,6 +235,13 @@
 .card .info p{
     padding-bottom: 15px;
 }
+.info {
+    text-align: center; /* Центрирование текста по горизонтали */
+    font-size: 18px; /* Увеличьте размер шрифта по вашему желанию */
+    padding: 20px;
+    font-family: 'onest',Arial,sans-serif;
+    font-weight:normal;
+}
 #button_card {
     bottom: 30px; /* Установил отступ снизу */
     right: 30px; /* Установил отступ справа */
