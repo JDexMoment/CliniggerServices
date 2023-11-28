@@ -220,13 +220,15 @@
     background-color: rgb(231, 245, 249);
     padding: 15px;
     border-radius: 30px;
+    transition: .3s;
 }
-
+.card:hover{
+    transform: scale(1.05);
+}
 .card>a>img {
     width: 100%;
     border-radius: 30px;
 }
-
 .card>.info{
     text-align: center;
 }
@@ -239,12 +241,12 @@
 /* Стили для кнопки Заказать услуги */
 .btn_entity {
     border-radius: 15px;
-    padding: 20px 40px;
+    padding: 15px 30px;
     background-color: rgb(81, 206, 252);
     color: white;
     font-family: 'onest',Arial,sans-serif;
     border: none;
-    font-size: 17px;
+    font-size: 16px;
     transition: background-color 0.3s /* Увеличил время анимации для плавного перехода */
 }
 .btn_entity:hover {
