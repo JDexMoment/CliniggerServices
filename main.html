@@ -37,17 +37,14 @@
                 
                 <img id="background_gif" src="img/main_gif_dark.jpg" alt="#">
                 
-                <div id="text_gif">
-                    <div id="text_gif_Hight"><span>Клининговые услуги для организаций</span></div>
-                    <div id="text_gif_Low"><span>В Ярославле и Ярославской области</span></div>
+                <div id="overlay_gif">
+                    <div class="text_gif">
+                        <div id="text_gif_Hight"><span >Клининговые услуги для организаций</span></div>
+                        <div id="text_gif_Low"><span >В Ярославле и Ярославской области</span></div>
+                    </div>
+                    <button class="btn_entity" type="button" onclick="showMenu()">Оставить заявку</button>
                 </div>
                 <!--тут у нас всплывающая при нажатии форма-->
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Высвечивающееся меню</title>                          
-                <div id="button_card">
-                    <button class="button_gif" type="button" onclick="showMenu()">Оставить заявку</button>
-                </div>
                 <div id="menuOverlay" onclick="hideMenu()">
                     <div id="menuContent" onclick="event.stopPropagation();">
                         <div id="text_Menu_Hight"><span>Оставьте свои контактные данные</span></div><br>

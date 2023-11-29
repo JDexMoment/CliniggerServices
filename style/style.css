@@ -105,32 +105,51 @@
 #background_gif, #gif_container {
     box-sizing: border-box;
 }
-.button_gif {
+/* Стили для текста */
+
+#overlay_gif{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    top: 60%;
     position: absolute;
-    bottom: 30px; 
-    right: 30px;
-    transform: translate(-50%, -50%);
+}
+#text_gif_Hight {
+    font-size: 60px;
+}
+#text_gif_Low {
+    font-size: 24px;
+}
+.text_gif {
+    margin-left: 10%;
+    text-align: left;
+    padding-right: 10%;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+.button_gif{
+    position: relative;
     background-color: rgb(81, 206, 252);
     color: white;
     padding: 20px 40px;
-    text-align: center;
-    text-decoration: none;
     display: inline-block;
-    font-family: 'onest',Arial,sans-serif;
-    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
     border: none;
     cursor: pointer;
     border-radius: 15px;
     font-size: 17px;
-    transition: background-color 0.3s
+    transition: background-color 0.3s;
+    margin-left: auto;
 }
+
 /* Стили для кнопки Заказать услуги */
 .btn_entity {
     border-radius: 15px;
     padding: 20px 40px;
     background-color: rgb(81, 206, 252);
     color: white;
-    font-family: 'onest',Arial,sans-serif;
+    font-family: 'Roboto', sans-serif;
     border: none;
     font-size: 17px;
     transition: background-color 0.3s /* Увеличил время анимации для плавного перехода */
@@ -174,22 +193,6 @@
     box-sizing: border-box;
     margin-bottom: 10px;
 }
-
-/* Стили для текста */
-#text_gif {
-    position: absolute;
-    color: white;
-    top: 70%;
-    text-align: left;
-    margin-left: 10px;
-}
-#text_gif_Hight {
-    font-size: 60px;
-}
-#text_gif_Low {
-    font-size: 24px;
-}
-
 
 /* Navbar container */
 .navbar {
@@ -242,12 +245,7 @@
     font-family: 'onest',Arial,sans-serif;
     font-weight:normal;
 }
-#button_card {
-    bottom: 30px; /* Установил отступ снизу */
-    right: 30px; /* Установил отступ справа */
-    color: #fff;
-    border: none; 
-}
+
 /* Стили для кнопки Заказать услуги */
 .btn_entity {
     border-radius: 15px;
