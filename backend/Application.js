@@ -1,13 +1,6 @@
 const http = require('http');
 const EventEmitter = require('events');
 
-
-// enpoint = {
-//   '/users': {
-//      'GET': handler
-//    }
-// }
-
 module.exports = class Application {
     constructor() {
         this.emitter = new EventEmitter();
