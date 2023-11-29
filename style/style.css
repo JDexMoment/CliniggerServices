@@ -113,7 +113,7 @@
 .text_gif {
     position: absolute;
     margin-left: 10%;
-    margin-right: 10%;
+    margin-right: 20%;
     text-align: left;
     color: white;
     font-family: 'Roboto', sans-serif;
@@ -459,3 +459,22 @@
     font-size: 40px;
 }
 
+@media (max-width: 900px) {
+    #gif_container {
+        height: 600px;
+    }
+    #text_gif_Hight {
+        font-size: 40px;
+    }
+    #text_gif_Low {
+        font-size: 18px;
+    }
+    .text_gif {
+        top: 50%; /* Перемещаем текст выше */
+    }
+    /* Перемещаем кнопку под текст */
+    .button_gif {
+        top:80%;
+        left: 15%;
+    }
+}
