@@ -154,6 +154,7 @@
     align-items: center;
     transition: opacity 0.3s ease-in-out; /* Плавная анимация изменения прозрачности */
     opacity: 0;
+    z-index: 999;
 }
 
 #menuContent {
@@ -165,6 +166,7 @@
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Плавные анимации изменения положения и прозрачности */
     transform: scale(0.8);
     opacity: 0;
+    z-index: 1000;
 }
 #text_Menu_Hight{
     font-size: 36px;
