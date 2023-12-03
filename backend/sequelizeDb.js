@@ -9,7 +9,12 @@ const sequelize = new Sequelize({
 
 // Определение модели User
 const User = sequelize.define('User', {
-    telephone: {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true, // Добавьте эту опцию
+    },
+    phone: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -20,9 +25,18 @@ const User = sequelize.define('User', {
 });
 
 // Синхронизация с базой данных (создание таблицы, если её нет)
-sequelize.sync();
+sequelize.sync()
+  .then(() => {
+    console.log('База данных успешно подключена и синхронизирована.');
+  })
+  .catch((error) => {
+    console.error('Ошибка подключения к базе данных:', error);
+  });
 
 // Функция для получения всех пользователей
+
+
+
 const getUsers = async (req, res) => {
     try {
         const users = await User.findAll();
@@ -33,18 +47,19 @@ const getUsers = async (req, res) => {
     }
 };
 
-// Функция для создания нового пользователя
+//Функция для создания нового пользователя
 const createUser = async (req, res) => {
-    const { telephone, name } = req.body;
+    const {phone, name } = req.body;
 
     try {
-        const user = await User.create({ telephone, name });
+        const user = await User.create({phone, name });
         res.send(user);
     } catch (error) {
         console.error('Ошибка при создании пользователя в базе данных:', error);
         res.status(500).send('Произошла ошибка при сохранении данных.');
     }
 };
+
 
 const getUserById = async (req, res) => {
     const userId = req.query.id;
@@ -68,26 +83,23 @@ const getUserById = async (req, res) => {
 };
 
 const deleteUser = async (req, res) => {
-    const userId = req.params.id;
-
-    if (!userId) {
-        return res.status(400).send('Не указан параметр id в запросе.');
-    }
+    const userId = req.params.id; // Предполагается, что параметр передается через URL
 
     try {
         const user = await User.findByPk(userId);
 
-        if (user) {
-            await user.destroy(); // Удаляем пользователя из базы данных
-            res.send('Пользователь успешно удален.');
-        } else {
-            res.status(404).send('Пользователь не найден.');
+        if (!user) {
+            return res.status(404).send('Пользователь не найден.');
         }
+
+        await user.destroy();
+        res.send('Пользователь успешно удален.');
     } catch (error) {
         console.error('Ошибка при удалении пользователя из базы данных:', error);
-        res.status(500).send('Произошла ошибка при выполнении запроса.');
+        res.status(500).send('Произошла ошибка при удалении пользователя.');
     }
 };
+
 
 module.exports = {
     getUsers,
