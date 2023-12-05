@@ -64,3 +64,28 @@ function showMenu() {
     // Закрываем меню после отправки
     hideMenu();
   }
+
+function submitReview() {
+  const username = document.getElementById("username").value;
+  const reviewComment = document.getElementById("review_comment").value;
+  const ratingValue = parseInt(document.querySelector("rating"));
+    // Код для отправки отзыва на сервер
+  if (reviewData.reviewComment !== null & reviewData.username !== null & reviewData.ratingValue !== null) {
+    // Отправка данных на сервер
+    fetch('http://localhost:5000/submit-review', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(reviewData),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Ответ от сервера:', data);
+      // Дополнительная обработка ответа при необходимости
+    })
+    .catch(error => console.error('Ошибка при отправке отзыва:', error));
+  } else {
+    console.error('Значение reviewComment не должно быть null.');
+  }
+}
