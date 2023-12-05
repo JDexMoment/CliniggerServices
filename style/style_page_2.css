@@ -1,196 +1,158 @@
+/*  */
 
-/*header*/
-#header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    flex-direction: row;
-    padding-bottom: 10px;
-}
-.image_logo a img{
-    width: 100px;
-    height: auto;
-    border-radius: 30px;
-}
-.navigation{
-    background-color:#bbf1ffbc;
-    border-radius: 30px;
-    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
-    padding: 5px;
-}
-.nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5px;
-    padding: 0;
-    
-}
-.nav li{
-    list-style-type: none;
-}
-.navigation_btn{
-    padding: 10px;
-    text-decoration: none;
-    color: #000000;
-    font-family: 'onest',Arial,sans-serif;
+/* Стили для таблицы стоимости услуг */
+.price_list {
+    margin: 5%;
+    padding: 20px;
+    padding-bottom: 30px;
 }
 
-/* main */
-/* gif container */
-#gif_container {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
+.price_list h2 {
+    color: #000000; /* Чёрный цвет текста */
+    font-family: 'Roboto', sans-serif; 
+    text-align: left; /* Выравнивание по центру */
+    padding-bottom: 20px; /* Отступ снизу */
+    font-size: 35px;
 }
-#background_gif {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 30px;
-}
-#button_gif {
-    position: absolute;
-    bottom: 30px; /* Установил отступ снизу */
-    right: 30px; /* Установил отступ справа */
-    color: #fff;
-    border: none; 
-}
-/* Стили для текста */
-#text_gif {
-    position: absolute;
-    color: white;
-    top: 70%;
-    text-align: left;
-    margin-left: 10px;
-}
-#text_gif_Hight {
-    font-size: 60px;
-}
-#text_gif_Low {
-    font-size: 24px;
+.price_list h2 span {
+    color: #24affa;
 }
 
-/* Стили для кнопки Заказать услуги */
-.btn_entity {
-    border-radius: 15px;
-    padding: 20px 40px;
-    background-color: rgb(81, 206, 252);
-    color: white;
-    font-family: 'onest',Arial,sans-serif;
-    border: none;
-    font-size: 17px;
-    transition: background-color 0.3s /* Увеличил время анимации для плавного перехода */
-}
-.btn_entity:hover {
-    background-color: rgba(2, 166, 255, 0.8); /* Изменение цвета при наведении */
-    cursor: pointer; /* Изменение курсора при наведении */
+.price_list table {
+    width: 100%; /* Ширина таблицы */
+    border-collapse:collapse; /* Убрать двойные границы */
+    margin: auto; /* Центрирование таблицы */
 }
 
-/* Navbar container */
-.navbar {
-    overflow: hidden;
-    background-color: #333;
-    font-family: Arial;
+.price_list th, 
+.price_list td {
+    font-weight: 200;
+    padding: 20px; /* Поля внутри ячеек */
+    text-align: left; /* Выравнивание текста по левому краю */
+    font-family: 'Roboto', sans-serif; /* Шрифт как в навигации */
+    color: #414141;
 }
-  
-/* Links inside the navbar */
-.navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
+
+.price_list th {
+    font-size: 20px;
+    border-bottom: solid 2px #24affa;
+}
+
+.price_list td {
+    background-color: #f0f8ff; /* Светлый фон ячеек */
+}
+
+.price_list table tr:hover td{
+    background-color: #b0e0e6; /* Цвет фона при наведении */
+}
+
+
+/*  */
+.results_container {
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    margin: 20px;
+    padding-bottom: 50px;
 }
-  
-/* The dropdown container */
-.dropdown {
-    float: left;
-    overflow: hidden;
+
+.results_container h2 {
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 550;
+}
+.results_container span {
+    color: #24affa;
     
 }
-/* Dropdown button */
-.dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: black;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit; /* Important for vertical align on mobile phones */
-    margin: 0; /* Important for vertical align on mobile phones */
-    font-family: 'onest',Arial,sans-serif;
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    border-radius: 30px;
-    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
-    padding: 5px;
-    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
-    z-index: 1;
-}
-  
-/* Links inside the dropdown */
-.dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-  
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: #ddd;
-    border-radius: 30px;
-}
-  
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* information */
-#information {
-    text-align: center; /* Центрирование текста по горизонтали */
-    font-size: 30px; /* Увеличьте размер шрифта по вашему желанию */
-    padding: 20px 10px; /* Добавьте отступы по вашему желанию */
-    font-family: 'onest',Arial,sans-serif;
-    letter-spacing: -1.5px;
-    font-weight: 400;
-}
-#information span {
-    color: #24ccfa;
-}
-
-/* footer */
-
-#footer_nav{
+.results_gallery {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
-#footer{
-    background-color: #bbf1ffbc;
+
+.result_item {
+    margin: 10px;
+    transition: transform 0.3s ease;
 }
-#footer_info {
-    text-align: center
+
+.result_item img {
+    width: 330px; /* или 100% если контейнер будет иметь фиксированный размер */
+    height: 265px;
+    border-radius: 10px;
 }
-#footer_info .btn_entity {
-    margin: 20px;
+
+.result_item:hover {
+    transform: scale(1.05);
 }
-#footer_bar #nav li {
-    list-style: none;
+
+/*  */
+.contact_form_container {
+    text-align: left;
+    padding: 50px;
+    background-color: #ecf9ff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    margin-bottom: 50px;
+    width: 50%;
 }
-#footer_bar a {
+
+.contact_form_container h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+}
+
+.contact_form_container p {
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+}
+.contact_form_container a {
     text-decoration: none;
+    color: #24affa;
+}
+
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.contact_form input[type="text"],
+.contact_form input[type="tel"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+}
+
+.contact_form input[type="button"] {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #24affa;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 900px){
+    .price_list{
+    margin: 0;
+    padding: 0;
+    padding-bottom: 30px;
+    }
+    .price_list h2{
+        text-align: center;
+    }
+    .results_container{
+    .result_item img {
+        width: 300px;
+        height: 270px;
+    }
+    }
+    .contact_form_container{
+    width: 70%;
+    }
 }

@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Clinigger servise</title>
     <link rel="stylesheet" href="style/style_page_2.css">
+    <link rel="stylesheet" href="style/style.css">
+
 </head>
 <body>
-    <div class="page">
+    <div id = "page">
         <header id = header>
             <div class="image_logo">
                 <a href="main.html"> <img src="img/logo.png" alt=""> </a>
             </div>
             <div class="navigation">
                 <ul class="nav">
+                    <!--<li><a href="#" class="navigation_btn">Услуги</a></li>-->
                     <div class="dropdown">
                         <button class="dropbtn">Услуги
                           <i class="fa fa-caret-down"></i>
@@ -30,43 +33,212 @@
                 </ul>
             </div>                    
         </header>
-        <div class="main">
+        <main id="main">
             <div id="gif_container">
-                <img id="background_gif" src="img/card_img/uborka_v_ofise.jpg" alt="#">
-                <div id="text_gif">
-                    <div id="text_gif_Hight"><span>Клининговые услуги для организаций</span></div>
-                    <div id="text_gif_Low"><span>В Ярославле и Ярославской области</span></div>
+                <img id="background_gif" src="img/back_img/uborka_v_ofise копия.jpg" alt="#">
+                <div class="text_gif">
+                    <div id="text_gif_Hight"><span >Ежедневная уборка коммерческой недвижимости</span></div>
+                    <div id="text_gif_Low"><span >Комплексная уборка недвижимости по графику</span></div>
+                </div>
+                <!--тут у нас всплывающая при нажатии форма-->
+                <div id="menuOverlay" onclick="hideMenu()">
+                    <div id="menuContent" onclick="event.stopPropagation();">
+                        <div id="text_Menu_Hight"><span>Оставьте свои контактные данные</span></div><br>
+                        <div id="text_Menu_Low"><span>Менеджер перезвонит вам как можно скорее в рабочее время, <br>
+                        проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
+
+                        <form id="myForm" action="/submitForm" method="post">
+                            <input type="text" id="name" name="name" placeholder="Введите ваше Имя" required><br>
+                            <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" required><br>
+                            <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="information">
-                <h3>Ежедневная уборка коммерческой недвижимости</h3>
+            <div id="information">
+                <h3>Мы предоставляем своим клиентам <span>лучшие условия договора</span> на ежедневную уборку помещений</h3>
             </div>
-            <div class="cost_services"></div>
-            <div class="result_photos"></div>
-            <footer id="footer">
-                <div id="footer_nav">
-                    <div class="image_logo">
-                        <a href="main.html"><img src="img/logo.png" alt=""></a>
+            <div class="price_list">
+                <h2>Стоимость <span>услуг</span></h2>
+                <table>
+                    <tr>
+                        <th>Услуга</th>
+                        <th>Единица измерения</th>
+                        <th>Цена, руб</th>
+                    </tr>
+                    <tr>
+                        <td>Ежедневная уборка помещений до 200 м2</td>
+                        <td>м2/рабочая смена</td>
+                        <td>от 9 до 12 руб.</td>
+                    </tr>
+                    <tr>
+                        <td>Ежедневная уборка помещений от 200 до 400 м2</td>
+                        <td>м2/рабочая смена</td>
+                        <td>от 8 до 11 руб.</td>
+                    </tr>
+                    <tr>
+                        <td>Ежедневная уборка помещений от 400 до 700 м2</td>
+                        <td>м2/рабочая смена</td>
+                        <td>от 7 до 10 руб.</td>
+                    </tr>
+                    <tr>
+                        <td>Ежедневная уборка помещений от 700 м2 и более</td>
+                        <td>м2/рабочая смена</td>
+                        <td>от 5 до 8 руб.</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="results_container">
+                <h2>Посмотрите <span>результаты наших работ</span></h2>
+                <div class="results_gallery">
+                    
+                    <div class="result_item">
+                        <img src="/img/result_gallery/1_first.jpg" alt="Описание работы">
                     </div>
-                    <div id="footer_bar">
-                        <ul id="nav">
-                            <li><a href="main.html" class="Home">Home</a></li>
-                            <li><a href="#" class="Home">About</a></li>
-                            <li><a href="#" class="Home">Service</a></li>
-                            <li><a href="#" class="Home">Contact</a></li>
-                            <li><a href="#" class="Home">Portfolio</a></li>
-                        </ul>
+                    <div class="result_item">
+                        <img src="/img/result_gallery/2_second.jpg" alt="Описание работы">
                     </div>
-                    <div id="footer_info">
-                        <p>number</p>
-                        <button class="btn_entity" type="button">Оставить заявку</button>
+                    <div class="result_item">
+                        <img src="/img/result_gallery/3_third.jpg" alt="Описание работы">
                     </div>
+                    <div class="result_item">
+                        <img src="/img/result_gallery/4_four.jpg" alt="Описание работы">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="contact_form_container">
+                <h3>Заинтересованы в этой услуге?</h3>
+                <p>Заполните форму и один из наших экспертов свяжется с вами в рабочее время, чтобы обсудить условия</p>
+                <form id="myForm" action="/submitForm" method="post" class="contact_form">
+                    <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                    <input type="tel" id="phone" name="phone" placeholder="Ваш телефон" required>
+                    <button type="button" class="btn_entity" onclick="submitForm()">Отправить</button>
+                </form>
+                <a href="">Нажимая на кнопку «Отправить», я даю согласие на обработку персональных данных</a>
+            </div>
+            <div id="name_services">
+                <h4>Также ознакомтесь с другими услугами, которые мы предоставляем!</h4>
+            </div>
+            <div id="service">
+                <div id="card_container">
+                    
+                    <div class="card">
+                        <a href=""><img src="img/card_img/surrounding_areas.jpg" alt=""></a>
+                        <div class="info">
+                            <p>Уборка прилегающей территории</p>
+                            <!--тут у нас всплывающая при нажатии форма-->
+                                                      
+                            <div id="button_card">
+                                <button class="btn_entity" type="button" onclick="showMenu()">Заказать услуги</button>
+                            </div>
+                            <div id="menuOverlay" onclick="hideMenu()">
+                                <div id="menuContent" onclick="event.stopPropagation();">
+                                    <div id="text_Menu_Hight"><span>Оставьте свои контактные данные</span></div><br>
+                                    <div id="text_Menu_Low"><span>Менеджер перезвонит вам как можно скорее в рабочее время, <br>
+                                    проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
+
+                                    <form id="myForm" action="/submitForm" method="post"></form>
+
+                                    <input type="text" id="name" name="name" placeholder="Введите ваше Имя" required><br>
+                                    <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" required><br>
+                                    <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href=""><img src="img/card_img/myte_stekol_v_ofise.jpg" alt=""></a>
+                        <div class="info">
+                            <p>Мойка окон и витрин</p>
+                            <!--тут у нас всплывающая при нажатии форма-->
+                                                     
+                            <div id="button_card">
+                                <button class="btn_entity" type="button" onclick="showMenu()">Заказать услуги</button>
+                            </div>
+                            <div id="menuOverlay" onclick="hideMenu()">
+                                <div id="menuContent" onclick="event.stopPropagation();">
+                                    <div id="text_Menu_Hight"><span>Оставьте свои контактные данные</span></div><br>
+                                    <div id="text_Menu_Low"><span>Менеджер перезвонит вам как можно скорее в рабочее время,<br>
+                                    проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
+
+                                    <form id="myForm" action="http://localhost:3000/submitForm" method="post"></form>
+
+                                    <input type="text" id="name" name="name" placeholder="Введите ваше Имя" required><br>
+                                    <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" required><br>
+                                    <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href=""><img src="img/card_img/Dry_cleaning.jpeg" alt=""></a>
+                        <div class="info">
+                            <p>Химчистка мягкой мебели и ковролина</p>
+                            <!--тут у нас всплывающая при нажатии форма-->
+                                                     
+                            <div id="button_card">
+                                <button class="btn_entity" type="button" onclick="showMenu()">Заказать услуги</button>
+                            </div>
+                            <div id="menuOverlay" onclick="hideMenu()">
+                                <div id="menuContent" onclick="event.stopPropagation();">
+                                    <div id="text_Menu_Hight"><span>Оставьте свои контактные данные</span></div><br>
+                                    <div id="text_Menu_Low"><span>Менеджер перезвонит вам как можно скорее в рабочее время, <br>
+                                    проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
+
+                                    <form id="myForm" action="http://localhost:3000/submitForm" method="post"></form>
+
+                                    <input type="text" id="name" name="name" placeholder="Введите ваше Имя" required><br>
+                                    <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" required><br>
+                                    <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            <div id="footer_nav">
+                <div class="image_logo">
+                    <a href=""><img src="img/logo.png" alt=""></a>
+                </div>
+                <div id="footer_bar">
+                    <ul id="nav">
+                        <li><a href="main.html" class="Home">Home</a></li>
+                        <li><a href="#" class="Home">About</a></li>
+                        <li><a href="#" class="Home">Service</a></li>
+                        <li><a href="#" class="Home">Contact</a></li>
+                        <li><a href="#" class="Home">Portfolio</a></li>
+                    </ul>
                 </div>
                 <div id="footer_info">
-                    <p>text</p>
+                    <p>number</p>
+                    <!--тут у нас всплывающая при нажатии форма-->
+                                              
+                    <div id="button_card">
+                        <button class="btn_entity" type="button" onclick="showMenu()">Оставить заявку</button>
+                    </div>
+                    <div id="menuOverlay" onclick="hideMenu()">
+                        <div id="menuContent" onclick="event.stopPropagation();">
+                            <div id="text_Menu_Hight"><span>Оставьте свои контактные данные</span></div><br>
+                            <div id="text_Menu_Low"><span>Менеджер перезвонит вам как можно скорее в рабочее время, <br>
+                            проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
+
+                            <form id="myForm" action="http://localhost:3000/submitForm" method="post"></form>
+
+                            <input type="text" id="name" name="name" placeholder="Введите ваше Имя" required><br>
+                            <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" required><br>
+                            <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
+                        </div>
+                    </div>                    
                 </div>
-            </footer>
-        </div>
+            </div>
+        </footer>
     </div>
+
+    <script src="script/script.js"></script>
+    <script src="script/app.js"></script>
+    <script src="script/ratingStarScript.js"></script>
 </body>
 </html>
