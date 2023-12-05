@@ -116,7 +116,8 @@
 
 .contact_form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     margin-bottom: 10px;
 }
 
@@ -124,8 +125,10 @@
 .contact_form input[type="tel"] {
     padding: 10px;
     margin-bottom: 10px;
-    border-radius: 15px;
-    border: 1px solid #ccc;
+    margin-right: 10px;
+    width: 300px;
+    height: 60px !important;
+
 }
 
 .contact_form input[type="button"] {
@@ -135,6 +138,7 @@
     background-color: #24affa;
     color: white;
     cursor: pointer;
+
 }
 
 @media (max-width: 900px){
@@ -154,5 +158,8 @@
     }
     .contact_form_container{
     width: 70%;
+    }
+    .contact_form{
+        flex-direction: column;
     }
 }
