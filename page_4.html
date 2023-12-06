@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clinigger servise</title>
+    <link rel="stylesheet" href="style/style_page_2.css">
     <link rel="stylesheet" href="style/style.css">
 
 </head>
@@ -34,13 +35,10 @@
         </header>
         <main id="main">
             <div id="gif_container">
-                <img id="background_gif" src="img/back_img/main_gif.jpg" alt="#">
+                <img id="background_gif" src="img/back_img/myte_stekol_v_ofise копия.jpg" alt="#">
                 <div class="text_gif">
-                    <div id="text_gif_Hight"><span >Клининговые услуги для организаций</span></div>
-                    <div id="text_gif_Low"><span >В Ярославле и Ярославской области</span></div>
-                </div>
-                <div class="button_gif">
-                    <button class="btn_entity" type="button" onclick="showMenu()">Оставить заявку</button>
+                    <div id="text_gif_Hight"><span >Мойка окон и витрин</span></div>
+                    <div id="text_gif_Low"><span >Взгляните на мир через чистое окно</span></div>
                 </div>
                 <!--тут у нас всплывающая при нажатии форма-->
                 <div id="menuOverlay" onclick="hideMenu()">
@@ -58,20 +56,69 @@
                 </div>
             </div>
             <div id="information">
-                <h3>Клининговая компания "Clinigger" оказывает <span>оказывает профессиональные клининговые услуги для организаций</span> или ваших домов</h3>
+                <h3>Мы предоставляем своим клиентам <span>лучшие условия договора</span> на ежедневную уборку помещений</h3>
             </div>
-            <div class="slider_container">
-                <div class="slider">
-                    <img src="img/slider_img/slider_1dop.jpg" alt="1">
-                    <img src="img/slider_img/slider_2.jpg" alt="2">
-                    <img src="img/slider_img/slider_3.jpg" alt="3">
-                    <img src="img/slider_img/slider_4.jpg" alt="4">
+            <div class="price_list">
+                <h2>Стоимость <span>услуг</span></h2>
+                <table>
+                    <tr>
+                        <th>Услуга</th>
+                        <th>Единица измерения</th>
+                        <th>Цена, руб</th>
+                    </tr>
+                    <tr>
+                        <td>Ежедневная уборка помещений до 200 м2</td>
+                        <td>м2/рабочая смена</td>
+                        <td>от 9 до 12 руб.</td>
+                    </tr>
+                    <tr>
+                        <td>Ежедневная уборка помещений от 200 до 400 м2</td>
+                        <td>м2/рабочая смена</td>
+                        <td>от 8 до 11 руб.</td>
+                    </tr>
+                    <tr>
+                        <td>Ежедневная уборка помещений от 400 до 700 м2</td>
+                        <td>м2/рабочая смена</td>
+                        <td>от 7 до 10 руб.</td>
+                    </tr>
+                    <tr>
+                        <td>Ежедневная уборка помещений от 700 м2 и более</td>
+                        <td>м2/рабочая смена</td>
+                        <td>от 5 до 8 руб.</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="results_container">
+                <h2>Посмотрите <span>результаты наших работ</span></h2>
+                <div class="results_gallery">
+                    
+                    <div class="result_item">
+                        <img src="/img/result_gallery/1_first.jpg" alt="Описание работы">
+                    </div>
+                    <div class="result_item">
+                        <img src="/img/result_gallery/2_second.jpg" alt="Описание работы">
+                    </div>
+                    <div class="result_item">
+                        <img src="/img/result_gallery/3_third.jpg" alt="Описание работы">
+                    </div>
+                    <div class="result_item">
+                        <img src="/img/result_gallery/4_four.jpg" alt="Описание работы">
+                    </div>
+                    
                 </div>
-                <button class="prev_btn" >&lt;</button>
-                <button class="next_btn" >&gt;</button>
+            </div>
+            <div class="contact_form_container">
+                <h3>Заинтересованы в этой услуге?</h3>
+                <p>Заполните форму и один из наших экспертов свяжется с вами в рабочее время, чтобы обсудить условия</p>
+                <form id="myForm" action="/submitForm" method="post" class="contact_form">
+                    <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                    <input type="tel" id="phone" name="phone" placeholder="Ваш телефон" required>
+                    <button type="button" class="btn_entity" onclick="submitForm()">Отправить</button>
+                </form>
+                <a href="">Нажимая на кнопку «Отправить», я даю согласие на обработку персональных данных</a>
             </div>
             <div id="name_services">
-                <h4>Предлагаем полный комплекс услуг <span>по уборке и дезинфекции помещений</span></h4>
+                <h4>Также ознакомтесь с другими услугами, которые мы предоставляем!</h4>
             </div>
             <div id="service">
                 <div id="card_container">
@@ -124,35 +171,10 @@
                         </div>
                     </div>
                     <div class="card">
-                        <a href="page_4.html"><img src="img/card_img/myte_stekol_v_ofise.jpg" alt=""></a>
-                        <div class="info">
-                            <p>Мойка окон и витрин</p>
-                            <!--тут у нас всплывающая при нажатии форма-->
-                                                     
-                            <div id="button_card">
-                                <button class="btn_entity" type="button" onclick="showMenu()">Заказать услуги</button>
-                            </div>
-                            <div id="menuOverlay" onclick="hideMenu()">
-                                <div id="menuContent" onclick="event.stopPropagation();">
-                                    <div id="text_Menu_Hight"><span>Оставьте свои контактные данные</span></div><br>
-                                    <div id="text_Menu_Low"><span>Менеджер перезвонит вам как можно скорее в рабочее время,<br>
-                                    проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
-
-                                    <form id="myForm" action="http://localhost:3000/submitForm" method="post"></form>
-
-                                    <input type="text" id="name" name="name" placeholder="Введите ваше Имя" required><br>
-                                    <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" required><br>
-                                    <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
                         <a href="page_5.html"><img src="img/card_img/Dry_cleaning.jpeg" alt=""></a>
                         <div class="info">
                             <p>Химчистка мягкой мебели и ковролина</p>
-                            <!--тут у нас всплывающая при нажатии форма-->
-                                                     
+                            <!--тут у нас всплывающая при нажатии форма-->                
                             <div id="button_card">
                                 <button class="btn_entity" type="button" onclick="showMenu()">Заказать услуги</button>
                             </div>
@@ -173,42 +195,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="reviews_header">
-            <h2>Отзывы наших <span>клиентов</span></h2>
-            </div>
-            
-            <div class="reviews_wrapper">
-                <div class="reviews_list">
-                    <!-- Контейнер для отзывов -->
-                    <div class="review">
-                        <div class="user_info">
-                            <p>Имя пользователя</p>
-                        </div>
-                        <div class="user_rating">
-                            <span class="rating_stars">★★★★☆</span>
-                        </div>
-                        <p class="comment">Текст отзыва...</p>
-                    </div>
-                    <!-- Другие отзывы могут быть добавлены здесь -->
-                </div>
-                <form id="review_form">
-                    <h3>Оставьте отзыв!</h3>
-                    <!-- Форма для отправки нового отзыва -->
-                    <input type="text" id="username" placeholder="Ваше имя" required>
-                    <textarea id="review_comment" placeholder="Ваш отзыв" required></textarea>
-                    <div class="rating" data-total-value="0">
-                        <div class="rating_item" data-item-value="5">★</div>
-                        <div class="rating_item" data-item-value="4">★</div>
-                        <div class="rating_item" data-item-value="3">★</div>
-                        <div class="rating_item" data-item-value="2">★</div>
-                        <div class="rating_item" data-item-value="1">★</div>
-                    </div>
-                    <button type="submit">Отправить отзыв</button>
-                </form>
-            </div>
-            
-        </div>
+        </main>
         <footer id="footer">
             <div id="footer_nav">
                 <div class="image_logo">
