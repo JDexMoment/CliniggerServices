@@ -39,15 +39,18 @@ sequelize.sync();
 app.use(express.json());
 // app.use(express.static(path.join(__dirname, 'public')));
 
+// Пример серверного маршрута с использованием Express
 app.get('/reviews', async (req, res) => {
     try {
-        const reviews = await Review.findAll();
-        res.json(reviews);
+      const reviews = await Review.findAll(); // Предположим, что у вас есть модель Review
+  
+      res.json(reviews);
     } catch (error) {
-        console.error('Ошибка при получении отзывов:', error);
-        res.status(500).json({ error: error.message });
+      console.error('Ошибка при получении отзывов:', error.message);
+      res.status(500).send('Ошибка сервера');
     }
 });
+  
 
 
 app.post('/submit-review', async (req, res) => {

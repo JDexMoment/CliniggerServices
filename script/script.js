@@ -121,4 +121,61 @@ function submitReview() {
   }
 }
 
+// Пример JavaScript-кода на клиентской стороне
+document.addEventListener('DOMContentLoaded', function () {
+  const reviewsList = document.querySelector('.reviews_list');
+
+  function convertRatingToStars(rating) {
+    const maxRating = 5;
+    const roundedRating = Math.round(rating);
+  
+    const stars = Array.from({ length: maxRating }, (_, index) => {
+      const isFilled = index + 1 <= roundedRating;
+      const starClass = isFilled ? 'rating_item_orange' : 'rating_item_rev';
+  
+      return `<span class="${starClass}">&#9733;</span>`;
+    });
+  
+    return stars.join('');
+  }
+  
+  
+  
+  
+
+  fetch('http://localhost:5000/reviews')
+    .then(response => response.json())
+    .then(reviews => {
+      reviews.forEach(review => {
+        const reviewElement = document.createElement('div');
+        reviewElement.classList.add('review');
+
+        const userInfo = document.createElement('div');
+        userInfo.classList.add('user_info');
+        const username = document.createElement('p');
+        username.textContent = review.username;
+        userInfo.appendChild(username);
+
+        const userRating = document.createElement('div');
+        userRating.classList.add('user_rating');
+        const ratingStars = document.createElement('span');
+        ratingStars.classList.add('rating_stars');
+        ratingStars.innerHTML = convertRatingToStars(review.rating); // Используем функцию для отображения рейтинга
+        userRating.appendChild(ratingStars);
+
+        const comment = document.createElement('p');
+        comment.classList.add('comment');
+        comment.textContent = review.reviewComment;
+
+        reviewElement.appendChild(userInfo);
+        reviewElement.appendChild(userRating);
+        reviewElement.appendChild(comment);
+
+        reviewsList.appendChild(reviewElement);
+      });
+    })
+    .catch(error => console.error('Ошибка при получении отзывов:', error));
+});
+
+
 
