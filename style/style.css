@@ -354,12 +354,22 @@
 .reviews_list {
     width: 50%; /* Ширина списка отзывов */
     border-right: 1px solid #9a9a9a;
+    max-height: 400px; /* Установите максимальную высоту блока отзывов по вашему усмотрению */
+    overflow-y: auto;
 }
 
 /* Стили для отдельного отзыва */
 .review {
     margin-bottom: 20px; /* Внешний отступ между отзывами */
     font-size: 19px;
+    border-bottom: 1px solid #ccc; /* Цвет и стиль полоски между отзывами */
+    padding-bottom: 10px;
+}
+.review:last-child {
+    border-bottom: none;
+}
+.review:first-child {
+    border-top: none;
 }
 
 /* Дополнительные стили для формы отзыва */
@@ -386,6 +396,16 @@
 .rating[data-total-value="4"] .rating_item:nth-child(n + 2),
 .rating[data-total-value="5"] .rating_item:nth-child(n + 1) {
     color: orange;
+}
+
+.rating_item_orange {
+    font-size: 30px;
+    color: #dcdcdc;
+    color: orange;
+} 
+.rating_item_rev{
+    font-size: 30px;
+    color: #dcdcdc;
 }
 /* Дополнительные стили для полей формы */
 #username, #review_comment {

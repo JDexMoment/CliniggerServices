@@ -183,32 +183,32 @@
                     <!-- Контейнер для отзывов -->
                     <div class="review">
                         <div class="user_info">
-                            <p>Имя пользователя</p>
+                            
                         </div>
                         <div class="user_rating">
-                            <span class="rating_stars">★★★★☆</span>
+                            <span class="rating_stars"></span>
                         </div>
-                        <p class="comment">Текст отзыва...</p>
+                        <p class="comment"></p>
                     </div>
                     <!-- Другие отзывы могут быть добавлены здесь -->
                 </div>
-                <form id="review_form">
+                <form id="review_form" action="http://localhost:5000/submit-review" method="post">
                     <h3>Оставьте отзыв!</h3>
                     <!-- Форма для отправки нового отзыва -->
+
                     <input type="text" id="username" placeholder="Ваше имя" required>
-                    <textarea id="review_comment" placeholder="Ваш отзыв" required></textarea>
+                    <textarea  input type="text" id="review_comment" placeholder="Ваш отзыв" required></textarea>
                     <div class="rating" data-total-value="0">
-                        <div class="rating_item" data-item-value="5">★</div>
-                        <div class="rating_item" data-item-value="4">★</div>
-                        <div class="rating_item" data-item-value="3">★</div>
-                        <div class="rating_item" data-item-value="2">★</div>
-                        <div class="rating_item" data-item-value="1">★</div>
+                        <div class="rating_item" data-item-value="5" onclick="handleRatingClick(this)">★</div>
+                        <div class="rating_item" data-item-value="4" onclick="handleRatingClick(this)">★</div>
+                        <div class="rating_item" data-item-value="3" onclick="handleRatingClick(this)">★</div>
+                        <div class="rating_item" data-item-value="2" onclick="handleRatingClick(this)">★</div>
+                        <div class="rating_item" data-item-value="1" onclick="handleRatingClick(this)">★</div>
                     </div>
-                    <button type="submit">Отправить отзыв</button>
+                    <button type="submit" id="submit-review" onclick="submitReview()">Отправить отзыв</button>
                 </form>
             </div>
-            
-        </div>
+        </main>
         <footer id="footer">
             <div id="footer_nav">
                 <div class="image_logo">
@@ -249,7 +249,7 @@
     </div>
 
     <script src="script/script.js"></script>
-    <script src="script/app.js"></script>
+    <!-- <script src="script/app.js"></script> -->
     <script src="script/ratingStarScript.js"></script>
 </body>
 </html>
