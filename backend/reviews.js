@@ -52,22 +52,29 @@ app.get('/reviews', async (req, res) => {
 
 app.post('/submit-review', async (req, res) => {
     const { username, reviewComment, rating } = req.body;
-  
+
+    //Проверяем, что все поля не пустые
+    if (!username || !reviewComment || !rating) {
+        return res.status(400).json('Спасибо за оставленный отзыв, вы можете вернуться на основную страницу' );
+    }
+
     try {
-      // Сохранение отзыва в базе данных
-      const createdReview = await Review.create({
-        username: username,
-        reviewComment: reviewComment, // изменено имя поля
-        rating: rating,
-      });
-  
-      console.log('Отзыв успешно сохранен в базе данных:', createdReview.toJSON());
-      res.status(200).json({ message: 'Отзыв успешно сохранен' });
+        // Сохранение отзыва в базе данных
+        const createdReview = await Review.create({
+            username: username,
+            reviewComment: reviewComment,
+            rating: rating,
+        });
+        console.log('Полученные данные:', username, reviewComment, rating);
+
+        console.log('Отзыв успешно сохранен в базе данных:', createdReview.toJSON());
+        res.status(200).json({ message: 'Отзыв успешно сохранен' });
     } catch (error) {
         console.error('Ошибка при сохранении отзыва:', error);
         res.status(500).json({ error: error.message });
     }
 });
+
 
 app.listen(port, () => {
   console.log(`Сервер слушает по адресу http://localhost:${port}`);

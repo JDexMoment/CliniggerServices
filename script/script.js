@@ -52,25 +52,55 @@ function showMenu() {
     }, { once: true });
   }
 
-  function submitForm() {
-    // Здесь вы можете добавить код для отправки данных на сервер
-    var name = document.getElementById('name').value;
-    var phone = document.getElementById('phone').value;
-    var service = document.getElementById('service').value;
+function submitForm() {
+  // Здесь вы можете добавить код для отправки данных на сервер
+  var name = document.getElementById('name').value;
+  var phone = document.getElementById('phone').value;
+  var service = document.getElementById('service').value;
 
-    // Ваш код для отправки данных, например, через AJAX
-    console.log('Отправка данных:', name, phone, service);
+  // Ваш код для отправки данных, например, через AJAX
+  console.log('Отправка данных:', name, phone, service);
 
-    // Закрываем меню после отправки
-    hideMenu();
-  }
+  // Закрываем меню после отправки
+  hideMenu();
+}
 
+function handleRatingClick(clickedItem) {
+  // Получаем все элементы с классом "rating_item"
+  const ratingItems = document.querySelectorAll(".rating_item");
+  
+  // Убираем класс "selected" у всех элементов
+  ratingItems.forEach(innerItem => {
+    innerItem.classList.remove("selected");
+  });
+  
+  // Добавляем класс "selected" только выбранному элементу
+  clickedItem.classList.add("selected");
+  
+  // Получаем текущее значение рейтинга
+  const selectedRatingItem = document.querySelector(".rating_item.selected");
+  const ratingValue = selectedRatingItem ? selectedRatingItem.getAttribute("data-item-value") : null;
+  
+  console.log("Выбранный рейтинг:", ratingValue);
+}
+  
 function submitReview() {
   const username = document.getElementById("username").value;
   const reviewComment = document.getElementById("review_comment").value;
-  const ratingValue = parseInt(document.querySelector("rating"));
-    // Код для отправки отзыва на сервер
-  if (reviewData.reviewComment !== null & reviewData.username !== null & reviewData.ratingValue !== null) {
+
+  // Получаем текущее значение рейтинга
+  const selectedRatingItem = document.querySelector(".rating_item.selected");
+  const ratingValue = selectedRatingItem ? selectedRatingItem.getAttribute("data-item-value") : null;
+
+  // Проверяем, что данные не являются пустыми или null
+  if (username && reviewComment && ratingValue) {
+    // Создание объекта reviewData с полученными данными
+    const reviewData = {
+      username: username,
+      reviewComment: reviewComment,
+      rating: ratingValue,
+    };
+
     // Отправка данных на сервер
     fetch('http://localhost:5000/submit-review', {
       method: 'POST',
@@ -85,7 +115,10 @@ function submitReview() {
       // Дополнительная обработка ответа при необходимости
     })
     .catch(error => console.error('Ошибка при отправке отзыва:', error));
+    console.log('Отправляемые данные:', reviewData);
   } else {
-    console.error('Значение reviewComment не должно быть null.');
+    console.error('Значение username, reviewComment или rating не должно быть пустым.');
   }
 }
+
+
