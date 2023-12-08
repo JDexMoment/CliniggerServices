@@ -128,12 +128,22 @@ function submitReview() {
       },
       body: JSON.stringify(reviewData),
     })
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Ошибка: ${response.status} ${response.statusText}`);
+      }
+      return response.json();
+    })
     .then(data => {
       console.log('Ответ от сервера:', data);
-      // Дополнительная обработка ответа при необходимости
+      // Вместо этой строки убедитесь, что вы что-то делаете с данными, например, обновляете интерфейс
+      alert('Отзыв успешно отправлен'); 
     })
-    .catch(error => console.error('Ошибка при отправке отзыва:', error));
+    .catch(error => {
+      console.error('Ошибка при отправке отзыва:', error.message);
+      // Вместо этой строки убедитесь, что вы что-то делаете в случае ошибки, например, выводите сообщение об ошибке
+      alert('Произошла ошибка при отправке отзыва');
+    });
     console.log('Отправляемые данные:', reviewData);
   } else {
     console.error('Значение username, reviewComment или rating не должно быть пустым.');
