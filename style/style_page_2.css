@@ -67,7 +67,7 @@
 .results_gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-between;
+    justify-content:space-around;
 }
 
 .result_item {
