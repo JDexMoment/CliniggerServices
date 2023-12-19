@@ -37,7 +37,7 @@
     padding: 10px;
     text-decoration: none;
     color: #000000;
-    font-family: 'onest',Arial,sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 /* The dropdown container */
 .dropdown {
@@ -424,43 +424,7 @@
     color: #707981;
 }
 
-/* footer */
-/* #footer{
-    background-color: #ecf9ff;
-    margin-top: auto;
-    padding: 20px;
-    border-radius: 10px ;
-}
-#footer_nav{
-    display: flex;
-    align-items: center;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: row;
-}
-#footer_info {
-    text-align: center
-}
-#footer_info .btn_entity {
-    margin: 20px;
-}
-#footer_bar #nav li {
-    list-style: none;
-    margin: 20px 0px;
-    font-size: 20px;
-}
-#footer_bar a {
-    text-decoration: none;
-    color: #000;
-    
-}
-#footer_nav a img {
-    align-self: flex-start;
-}
-#footer_info p {
-    font-size: 40px;
-} */
-
+/* Footer */
 #footer {
     background-color: #ecf9ff;
     padding: 40px;
@@ -488,7 +452,6 @@
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    
     gap: 20px; /* Расстояние между элементами списка */
 }
  
@@ -500,18 +463,24 @@
 
  
 /* Адаптивность */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     #footer_nav {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
  
     #footer_info p {
-        font-size: 16px;
+        font-size: 30px;
+        margin-top: 30px;
     }
- 
+    #footer_bar{
+        margin-top: 30px;
+    }
     #footer_bar ul {
         justify-content: flex-start;
+    }
+    #footer_bar ul li a{
+        font-size: 25px;
     }
 }
  
