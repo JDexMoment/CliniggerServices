@@ -10,28 +10,27 @@
 </head>
 <body>
     <div id = "page">
-        <header id = header>
+        <header id="header">
             <div class="image_logo">
-                <a href="main.html"> <img src="img/logo.png" alt=""> </a>
+                <a href="main.html"><img src="img/logo.png" alt="Логотип"></a>
             </div>
-            <div class="navigation">
-                <ul class="nav">
-                    <!--<li><a href="#" class="navigation_btn">Услуги</a></li>-->
-                    <div class="dropdown">
-                        <button class="dropbtn">Услуги
-                          <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                          <a href="page_2.html">Ежедневная уборка коммерческой недвижимости</a>
-                          <a href="page_3.html">Уборка прилегающей территории</a>
-                          <a href="page_4.html">Мойка окон и витрин</a>
-                          <a href="page_5.html">Химчистка мягкой мебели и ковролина</a>
-                        </div>
-                      </div>
-                    <li><a href="#" class="navigation_btn">Вакансии</a></li>
-                    <li><a href="#" class="navigation_btn">Контакты</a></li>
-                </ul>
-            </div>                    
+            <div class="navigation" id="navigation">
+                <div class="dropdown">
+                    <a href="#" class="dropdown_link">Услуги</a>
+                    <div class="dropdown-content">
+                        <a href="page_2.html">Ежедневная уборка коммерческой недвижимости</a>
+                        <a href="page_3.html">Уборка прилегающей территории</a>
+                        <a href="page_4.html">Мойка окон и витрин</a>
+                        <a href="page_5.html">Химчистка мягкой мебели и ковролина</a>
+                    </div>
+                </div>
+                <a href="vacancies.html">Вакансии</a>
+                <a href="contacts.html">Контакты</a>
+            
+                <button class="toggle-button" id="toggle-button">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
         </header>
         <main id="main">
             <div id="gif_container">
