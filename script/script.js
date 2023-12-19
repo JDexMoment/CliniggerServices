@@ -54,6 +54,11 @@ function hideMenu() {
   }, { once: true });
 }
 
+function clearForm() {
+  document.getElementById("name").value = "";
+  document.getElementById("phone").value = "";
+}
+
 function submitForm() {
   const name = document.getElementById('name').value;
   const phone = document.getElementById('phone').value;
@@ -82,6 +87,7 @@ function submitForm() {
       console.error('Ошибка при отправке запроса:', error);
   });
   hideMenu();
+  clearForm();
 }
 
 function handleRatingClick(clickedItem) {
