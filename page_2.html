@@ -210,37 +210,20 @@
         <footer id="footer">
             <div id="footer_nav">
                 <div class="image_logo">
-                    <a href=""><img src="img/logo.png" alt=""></a>
+                    <a href="main.html"><img src="img/logo.png" alt="Логотип"></a>
                 </div>
-                <div id="footer_bar">
+                <nav id="footer_bar">
                     <ul id="nav">
-                        <li><a href="main.html" class="Home">Home</a></li>
-                        <li><a href="#" class="Home">About</a></li>
-                        <li><a href="#" class="Home">Service</a></li>
-                        <li><a href="#" class="Home">Contact</a></li>
-                        <li><a href="#" class="Home">Portfolio</a></li>
+                        <li><a href="main.html">Главная</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="services.html">Услуги</a></li>                       
                     </ul>
-                </div>
+                </nav>
                 <div id="footer_info">
-                    <p>number</p>
-                    <!--тут у нас всплывающая при нажатии форма-->
-                                              
+                    <p>+8 800 555 35 35</p>
                     <div id="button_card">
                         <button class="btn_entity" type="button" onclick="showMenu()">Оставить заявку</button>
                     </div>
-                    <div id="menuOverlay" onclick="hideMenu()">
-                        <div id="menuContent" onclick="event.stopPropagation();">
-                            <div id="text_Menu_Hight"><span>Оставьте свои контактные данные</span></div><br>
-                            <div id="text_Menu_Low"><span>Менеджер перезвонит вам как можно скорее в рабочее время, <br>
-                            проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
-
-                            <form id="myForm" action="http://localhost:3000/submitForm" method="post"></form>
-
-                            <input type="text" id="name" name="name" placeholder="Введите ваше Имя" required><br>
-                            <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" required><br>
-                            <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
-                        </div>
-                    </div>                    
                 </div>
             </div>
         </footer>
