@@ -275,6 +275,9 @@
     font-family: 'onest',Arial,sans-serif;
     font-weight:normal;
 }
+#card4 p{
+    padding-bottom: 35px;
+}
 
 /* Стили для кнопки Заказать услуги */
 .btn_entity {
