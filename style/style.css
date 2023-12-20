@@ -240,23 +240,6 @@
     box-sizing: border-box;
     margin-bottom: 10px;
 }
-
-/* Navbar container */
-.navbar {
-    overflow: hidden;
-    background-color: #333;
-    font-family: Arial;
-}
-
-/* Links inside the navbar */
-.navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
   
 /* card */
 #card_container {
@@ -373,7 +356,6 @@
 .next_btn {
     right: 1%; /* Отступ справа относительно ширины страницы */
 }
-
 
 /* service name */
 #name_services{
