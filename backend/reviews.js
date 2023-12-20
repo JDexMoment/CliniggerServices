@@ -74,7 +74,7 @@ const postRev = async (req, res) => {
 
     //Проверяем, что все поля не пустые
     if (!username || !reviewComment || !rating) {
-        return res.status(400).json('Заполните все обязательные поля.');
+        return res.status(400).json('Спасибо за отправленный отзыв! Вы можете вернуться на основную страницу.');
     }
 
     try {
