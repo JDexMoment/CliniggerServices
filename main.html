@@ -145,16 +145,28 @@
                 <form id="review_form" action="http://localhost:5000/submit-review" method="post">
                     <h3>Оставьте отзыв!</h3>
                     <input type="text" id="username" placeholder="Ваше имя" required>
-                    <textarea  input type="text" id="review_comment" placeholder="Ваш отзыв" required></textarea>
+                    <textarea id="review_comment" placeholder="Ваш отзыв" required></textarea>
+                    
                     <div class="rating" data-total-value="0">
-                        <div class="rating_item" data-item-value="5" onclick="handleRatingClick(this)">★</div>
-                        <div class="rating_item" data-item-value="4" onclick="handleRatingClick(this)">★</div>
-                        <div class="rating_item" data-item-value="3" onclick="handleRatingClick(this)">★</div>
-                        <div class="rating_item" data-item-value="2" onclick="handleRatingClick(this)">★</div>
-                        <div class="rating_item" data-item-value="1" onclick="handleRatingClick(this)">★</div>
+                        <input type="radio" id="rating5" name="rating" value="5" onclick="handleRatingClick(this)" required>
+                        <label for="rating5">★</label>
+                
+                        <input type="radio" id="rating4" name="rating" value="4" onclick="handleRatingClick(this)" required>
+                        <label for="rating4">★</label>
+                
+                        <input type="radio" id="rating3" name="rating" value="3" onclick="handleRatingClick(this)" required>
+                        <label for="rating3">★</label>
+                
+                        <input type="radio" id="rating2" name="rating" value="2" onclick="handleRatingClick(this)" required>
+                        <label for="rating2">★</label>
+                
+                        <input type="radio" id="rating1" name="rating" value="1" onclick="handleRatingClick(this)" required>
+                        <label for="rating1">★</label>
                     </div>
+                    
                     <button type="submit" id="submit-review" onclick="submitReview()">Отправить отзыв</button>
                 </form>
+                
             </div>
         <footer id="footer">
             <div id="footer_nav">

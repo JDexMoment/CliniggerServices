@@ -114,8 +114,8 @@ function submitReview() {
   const reviewComment = document.getElementById("review_comment").value;
 
   // Получаем текущее значение рейтинга
-  const selectedRatingItem = document.querySelector(".rating_item.selected");
-  const ratingValue = selectedRatingItem ? selectedRatingItem.getAttribute("data-item-value") : null;
+  const selectedRatingInput = document.querySelector(".rating input:checked");
+  const ratingValue = selectedRatingInput ? selectedRatingInput.value : null;
 
   // Проверяем, что данные не являются пустыми или null
   if (username && reviewComment && ratingValue) {
