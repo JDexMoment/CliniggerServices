@@ -72,7 +72,9 @@ function submitForm() {
     },
     body: JSON.stringify({ name, phone }),
     })
-    alert("Данные отправлены на сервер.");
+    hideMenu();
+    clearForm();
+    alert("Ваша заявка записана, с вами обязательно свяжутся");
   }
 }
 
@@ -105,8 +107,9 @@ function submitReview() {
   const ratingValue = selectedRatingItem ? selectedRatingItem.getAttribute("data-item-value") : null;
 
   // Проверяем, что данные не являются пустыми или null и рейтинг выбран
-  if (username && reviewComment && ratingValue) {
-    // Отправка данных на сервер
+  if (username.trim() == "" || reviewComment.trim() == "" || ratingValue.trim() == "0") {
+    alert("Заполните все обязательные поля.");
+  } else {
     fetch('http://localhost:5000/submit-review', {
       method: 'POST',
       headers: {
@@ -118,15 +121,7 @@ function submitReview() {
         rating: ratingValue,
       }),
     })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Ответ от сервера:', data);
-      // Дополнительная обработка ответа при необходимости
-    })
-    .catch(error => console.error('Ошибка при отправке отзыва:', error));
-    console.log('Отправляемые данные:', username, reviewComment, ratingValue);
-  } else {
-    console.error('Значение username, reviewComment или rating не должно быть пустым.');
+    alert("Спасибо за оставленный отзыв");
   }
 }
 

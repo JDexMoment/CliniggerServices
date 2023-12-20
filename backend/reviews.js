@@ -50,11 +50,11 @@ const getRev = async (req, res) => {
 const postRev = async (req, res) => {
     const { username, reviewComment, rating } = req.body;
 
-    //Проверяем, что все поля не пустые
-    if (!username || !reviewComment || !rating) {
-        return res.status(400).json('Спасибо за отправленный отзыв! Вы можете вернуться на основную страницу.');
-    }
-    
+    // //Проверяем, что все поля не пустые
+    // if (!username || !reviewComment || !rating) {
+    //     return res.status(400).json('Спасибо за отправленный отзыв! Вы можете вернуться на основную страницу.');
+    // }
+
     try {
         // Сохранение отзыва в базе данных
         const createdReview = await Review.create({

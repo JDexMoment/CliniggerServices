@@ -30,31 +30,19 @@ function clearForm() {
 }
 
 function SubmitForm() {
-    const name = document.getElementById("name2").value;
-    const phone = document.getElementById("phone2").value;
-  
-    fetch('http://localhost:5000/submitForm', {
+    const name = document.getElementById('name2').value;
+    const phone = document.getElementById('phone2').value;
+    if (name.trim() === "" || phone.trim() === "") {
+        alert("Заполните все обязательные поля.");
+    } else {
+        fetch('http://localhost:5000/submitForm', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ name, phone }),
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`Ошибка HTTP! Статус: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        if (data.status === 'success') {
-            document.getElementById('successMessage').style.display = 'block';
-        } else {
-            console.error('Сервер вернул ошибку:', data.error);
-        }
-    })
-    .catch(error => {
-        console.error('Ошибка при отправке запроса:', error);
-    });
-    clearForm();
+        })
+        clearForm();
+        alert("Ваша заявка записана, с вами обязательно свяжутся");
+    }
 }
