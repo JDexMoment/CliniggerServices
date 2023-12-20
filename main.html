@@ -57,8 +57,8 @@
                         проконсультирует по услугам и составит точный расчет стоимости работ.</span></div> <br>
 
                         <form id="myForm" action="/submitForm" method="post">
-                            <input type="text" id="name" name="name" placeholder="Введите ваше Имя" required><br>
-                            <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" required><br>
+                            <input type="text" id="name" name="name" placeholder="Введите ваше Имя" required=""><br>
+                            <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" required=""><br>
                             <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
                         </form>
                     </div>
@@ -145,25 +145,14 @@
                 <form id="review_form" action="http://localhost:5000/submit-review" method="post">
                     <h3>Оставьте отзыв!</h3>
                     <input type="text" id="username" placeholder="Ваше имя" required>
-                    <textarea id="review_comment" placeholder="Ваш отзыв" required></textarea>
-                    
+                    <textarea  input type="text" id="review_comment" placeholder="Ваш отзыв" required></textarea>
                     <div class="rating" data-total-value="0">
-                        <input type="radio" id="rating5" name="rating" value="5" onclick="handleRatingClick(this)" required>
-                        <label for="rating5">★</label>
-                
-                        <input type="radio" id="rating4" name="rating" value="4" onclick="handleRatingClick(this)" required>
-                        <label for="rating4">★</label>
-                
-                        <input type="radio" id="rating3" name="rating" value="3" onclick="handleRatingClick(this)" required>
-                        <label for="rating3">★</label>
-                
-                        <input type="radio" id="rating2" name="rating" value="2" onclick="handleRatingClick(this)" required>
-                        <label for="rating2">★</label>
-                
-                        <input type="radio" id="rating1" name="rating" value="1" onclick="handleRatingClick(this)" required>
-                        <label for="rating1">★</label>
+                        <div class="rating_item" select required data-item-value="5" onclick="handleRatingClick(this)">★</div>
+                        <div class="rating_item" select required data-item-value="4" onclick="handleRatingClick(this)">★</div>
+                        <div class="rating_item" select required data-item-value="3" onclick="handleRatingClick(this)">★</div>
+                        <div class="rating_item" select required data-item-value="2" onclick="handleRatingClick(this)">★</div>
+                        <div class="rating_item" select required data-item-value="1" onclick="handleRatingClick(this)">★</div>
                     </div>
-                    
                     <button type="submit" id="submit-review" onclick="submitReview()">Отправить отзыв</button>
                 </form>
                 

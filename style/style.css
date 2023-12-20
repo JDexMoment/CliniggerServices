@@ -427,6 +427,15 @@
     display: inline-flex;
     flex-direction: row-reverse;
 }
+#rating1,
+#rating2,
+#rating3,
+#rating4,
+#rating5 {
+    font-size: 30px;
+    color: #dcdcdc;
+    color: orange;
+}
 .rating_item{
     font-size: 30px;
     color: #dcdcdc;
