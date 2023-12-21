@@ -80,8 +80,7 @@ function submitForm() {
 
 function handleRatingClick(clickedItem) {
   // Получаем все элементы с классом "rating_item"
-  var form = document.querySelector('.rating_item');
-  const ratingItems = form.querySelectorAll('[required]');
+  const ratingItems = document.querySelectorAll('.rating_item');
   
   // Убираем класс "selected" у всех элементов
   ratingItems.forEach(innerItem => {
@@ -106,24 +105,43 @@ function submitReview() {
   const selectedRatingItem = document.querySelector(".rating_item.selected");
   const ratingValue = selectedRatingItem ? selectedRatingItem.getAttribute("data-item-value") : null;
 
-  // Проверяем, что данные не являются пустыми или null и рейтинг выбран
-  if (username.trim() == "" || reviewComment.trim() == "" || ratingValue.trim() == "0") {
-    alert("Заполните все обязательные поля.");
+  // Проверяем, что данные не являются пустыми или null
+  if (username.trim() === "" || reviewComment.trim() === "" || !ratingValue) {
+      alert('Заполните все обязательные поля.');
+      return false; // Предотвращаем отправку формы
   } else {
-    fetch('http://localhost:5000/submit-review', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username: username,
-        reviewComment: reviewComment,
-        rating: ratingValue,
-      }),
-    })
-    alert("Спасибо за оставленный отзыв");
+      // Если поля не пустые, выполните отправку данных на сервер
+      const reviewData = {
+          username: username,
+          reviewComment: reviewComment,
+          rating: ratingValue,
+      };
+
+      fetch('http://localhost:5000/submit-review', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(reviewData),
+      })
+      .then(data => {
+        console.log('Ответ от сервера:', data);
+    
+        if (data.error) {
+            console.error('Ошибка на сервере:', data.error);
+            alert('Произошла ошибка при отправке отзыва');
+        } else {
+            alert('Отзыв успешно отправлен');
+            // Дополнительные действия на фронтенде, если необходимо
+            // Например, обновление интерфейса или переход на другую страницу
+            location.reload();
+        }
+      })    
+      return true; // Разрешаем отправку формы
   }
 }
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
   const reviewsList = document.querySelector('.reviews_list');
