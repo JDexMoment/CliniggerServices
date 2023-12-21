@@ -48,7 +48,7 @@
 .results_container {
     text-align: center;
     margin: 20px;
-    padding-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .results_container h2 {
@@ -180,13 +180,23 @@
     .price_list h2{
         text-align: center;
     }
-    .results_container{
+    .results_container
     .result_item img {
         width: 300px;
         height: 270px;
     }
-    }
+    
     .contact_form_container{
     width: 70%;
+    }
+}
+@media (max-width: 480px) {
+    .results_container .result_item img {
+        width: 170px;
+        height: 120px;
+        margin: 0;
+    }
+    .result_item{
+        margin: 5px;;
     }
 }
