@@ -27,7 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 formatted += '-' + match[5];
             }
 
-            input.value = formatted;
+            // Проверка на количество символов
+            if (cleaned.length <= 11) {
+                input.value = formatted;
+            } else {
+                input.value = cleaned.slice(0, 11); // Ограничиваем ввод 11 символами
+            }
         }
     }
 

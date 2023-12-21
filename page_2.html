@@ -121,7 +121,7 @@
                 <p>Заполните форму и один из наших экспертов свяжется с вами в рабочее время, чтобы обсудить условия</p>
                 <form id="myForm2" action="/submitForm" method="post" class="contact_form">
                     <input type="text" id="name2" name="name" placeholder="Ваше имя" required>
-                    <input type="tel" id="phone2" name="phone" placeholder="Введите ваш телефон" pattern="[0-9]+" title="Телефон должен содержать только цифры" required><br>
+                    <input type="text" id="phone2" name="phone" placeholder="Введите номер телефона">
                     <button class="btn_entity" type="button" onclick="SubmitForm()">Отправить</button>
                 </form>
                 <a href="">Нажимая на кнопку «Отправить», я даю согласие на обработку персональных данных</a>
@@ -189,7 +189,6 @@
             </div>
         </footer>
     </div>
-    <script src="script/formatPhoneNumber.js"></script>
     <script src="script/hideAllCards.js"></script>
     <script src="script/drop_navigation.js"></script>
     <script src="script/script.js"></script>
