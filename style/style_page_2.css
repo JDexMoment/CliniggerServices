@@ -1,5 +1,3 @@
-/*  */
-
 /* Стили для таблицы стоимости услуг */
 .price_list {
     margin: 5%;
@@ -8,10 +6,10 @@
 }
 
 .price_list h2 {
-    color: #000000; /* Чёрный цвет текста */
+    color: #000000; 
     font-family: 'Roboto', sans-serif; 
-    text-align: left; /* Выравнивание по центру */
-    padding-bottom: 20px; /* Отступ снизу */
+    text-align: left; 
+    padding-bottom: 20px; 
     font-size: 35px;
 }
 .price_list h2 span {
@@ -19,17 +17,17 @@
 }
 
 .price_list table {
-    width: 100%; /* Ширина таблицы */
-    border-collapse:collapse; /* Убрать двойные границы */
-    margin: auto; /* Центрирование таблицы */
+    width: 100%; 
+    border-collapse:collapse; 
+    margin: auto; 
 }
 
 .price_list th, 
 .price_list td {
     font-weight: 200;
-    padding: 20px; /* Поля внутри ячеек */
-    text-align: left; /* Выравнивание текста по левому краю */
-    font-family: 'Roboto', sans-serif; /* Шрифт как в навигации */
+    padding: 20px; 
+    text-align: left; 
+    font-family: 'Roboto', sans-serif; 
     color: #414141;
 }
 
@@ -39,11 +37,11 @@
 }
 
 .price_list td {
-    background-color: #f0f8ff; /* Светлый фон ячеек */
+    background-color: #f0f8ff; 
 }
 
 .price_list table tr:hover td{
-    background-color: #b0e0e6; /* Цвет фона при наведении */
+    background-color: #b0e0e6; 
 }
 
 /* result container */
@@ -75,7 +73,7 @@
 }
 
 .result_item img {
-    width: 330px; /* или 100% если контейнер будет иметь фиксированный размер */
+    width: 330px; 
     height: 265px;
     border-radius: 10px;
 }

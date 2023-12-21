@@ -196,11 +196,11 @@
     font-family: 'Roboto', sans-serif;
     border: none;
     font-size: 17px;
-    transition: background-color 0.3s /* Увеличил время анимации для плавного перехода */
+    transition: background-color 0.3s 
 }
 .btn_entity:hover {
-    background-color: rgba(2, 166, 255, 0.8); /* Изменение цвета при наведении */
-    cursor: pointer; /* Изменение курсора при наведении */
+    background-color: rgba(2, 166, 255, 0.8); 
+    cursor: pointer; 
 }
 
 #menuOverlay {
@@ -308,19 +308,19 @@
 /* slider */
 .slider_container {
     position: relative;
-    width: 90%; /* Ширина слайдера */
-    max-width: 1000px; /* Максимальная ширина слайдера */
-    height: auto; /*calc(39vw); */
-    margin: 20px auto; /* Отступы по краям */
+    width: 90%; 
+    max-width: 1000px; 
+    height: auto; 
+    margin: 20px auto;  
     overflow: hidden;
-    border-radius: 15px; /* Скругление углов */
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); /* Тень для подчеркивания слайдера */
+    border-radius: 15px; 
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    border-radius: 15px; /* Продолжение скругления углов */
+    border-radius: 15px; 
 }
 
 .slider img {
@@ -334,11 +334,11 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 5%; /* Ширина кнопок относительно ширины страницы */
-    height: auto; /* Автоматическая высота для сохранения пропорций */
+    width: 5%; 
+    height: auto; 
     background-color: transparent;
     border: none;
-    font-size: 1.5em; /* Размер шрифта увеличен */
+    font-size: 1.5em;
     color: white;
     border-radius: 50px;
 }
@@ -349,11 +349,11 @@
 }
 
 .prev_btn {
-    left: 1%; /* Отступ слева относительно ширины страницы */
+    left: 1%; 
 }
 
 .next_btn {
-    right: 1%; /* Отступ справа относительно ширины страницы */
+    right: 1%; 
 }
 
 /* service name */
@@ -382,30 +382,30 @@
 
 /* Стили для обертки отзывов */
 .reviews_wrapper {
-    display: flex; /* Отображение в виде flex-контейнера */
-    justify-content: space-between; /* Распределение элементов по ширине контейнера */
-    max-width: 600px; /* Максимальная ширина блока отзывов */
+    display: flex; 
+    justify-content: space-between; 
+    max-width: 600px; 
     max-height: 600px;
-    margin: 0 auto; /* Центрирование обертки отзывов на странице */
+    margin: 0 auto; 
     margin-bottom: 40px;
-    padding: 30px; /* Поля вокруг обертки отзывов */
-    border: 1px solid #ccc; /* Граница для обертки отзывов */
+    padding: 30px; 
+    border: 1px solid #ccc; 
     border-radius: 20px;
 }
 
 /* Стили для списка отзывов */
 .reviews_list {
-    width: 50%; /* Ширина списка отзывов */
+    width: 50%; 
     border-right: 1px solid #9a9a9a;
-    max-height: 400px; /* Установите максимальную высоту блока отзывов по вашему усмотрению */
+    max-height: 400px; 
     overflow-y: auto;
 }
 
 /* Стили для отдельного отзыва */
 .review {
-    margin-bottom: 20px; /* Внешний отступ между отзывами */
+    margin-bottom: 20px; 
     font-size: 19px;
-    border-bottom: 1px solid #ccc; /* Цвет и стиль полоски между отзывами */
+    border-bottom: 1px solid #ccc; 
     padding-bottom: 10px;
 }
 .review:last-child {
@@ -417,7 +417,7 @@
 
 /* Дополнительные стили для формы отзыва */
 #review_form {
-    width: 40%; /* Ширина формы отправки отзыва */
+    width: 40%; 
 }
 .rating{
     display: inline-flex;
@@ -506,7 +506,7 @@
 }
  
 #footer_info p {
-    font-size: 20px; /* Измените размер шрифта в соответствии с вашим дизайном */
+    font-size: 20px; 
     margin: 10px 0;
 }
  
@@ -515,7 +515,7 @@
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Расстояние между элементами списка */
+    gap: 20px; 
 }
  
 #footer_bar li a {
@@ -549,8 +549,8 @@
  
 @media (max-width: 480px) {
     #footer_info .btn_entity {
-        width: 100%; /* Кнопки на всю ширину */
-        margin-bottom: 10px; /* Отступ снизу */
+        width: 100%; 
+        margin-bottom: 10px; 
     }
 }
 /* адаптивность для гиф контейнера */
