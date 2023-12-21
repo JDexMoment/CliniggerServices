@@ -67,10 +67,7 @@ function submitForm() {
   if (name.trim() === "" || phone.trim() === "") {
     alert("Заполните все обязательные поля.");
   }
-  else if (!/^\d+$/.test(phone)) {
-    alert("Телефон должен содержать только цифры.");
-    return;
-  }
+  
   else {
     fetch('http://localhost:5000/submitForm', {
     method: 'POST',

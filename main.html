@@ -59,7 +59,7 @@
 
                         <form id="myForm" action="/submitForm" method="post">
                             <input type="text" id="name" name="name" placeholder="Введите ваше Имя" required=""><br>
-                            <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" pattern="[0-9]+" title="Телефон должен содержать только цифры" required><br>
+                            <input type="text" id="phone" name="phone" placeholder="Введите номер телефона">
                             <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
                         </form>
                     </div>
@@ -180,7 +180,7 @@
             </div>
         </footer>
     </div>
-
+    <script src="script/formatPhoneNumber.js"></script>
     <script src="script/hideAllCards.js"></script>
     <script src="script/drop_navigation.js"></script>
     <script src="script/script.js"></script>
