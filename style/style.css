@@ -243,11 +243,12 @@
     border-radius: 10px;
     border: 1px solid black;
     padding: 5px;
+    font-size: 20px;
 }
 #closeButton {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 15px;
+    right: 15px;
     cursor: pointer;
     color: #b8b8b8;
     font-size: 24px;
