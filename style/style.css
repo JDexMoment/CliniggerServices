@@ -229,6 +229,7 @@
     transform: scale(0.8);
     opacity: 0;
     z-index: 1000;
+    font-family: 'Roboto', sans-serif;
 }
 #text_Menu_Hight{
     font-size: 36px;
@@ -239,7 +240,19 @@
     height: 40px;
     box-sizing: border-box;
     margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 5px;
 }
+#closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: #b8b8b8;
+    font-size: 24px;
+}
+
   
 /* card */
 .hideCardsButton {
@@ -675,5 +688,23 @@
     #review_comment, #username {
         width: 85%;
         font-size: 16px;
+    }
+}
+@media (max-width: 480px) {
+    #menuContent{
+        padding: 25px;
+        margin: 10px;
+    }
+    #text_Menu_Hight{
+        font-size: 25px;
+    }
+    #text_Menu_Low {
+        font-size: 14px;
+    }
+    #name, #phone{
+        height: 50px;
+    }
+    #myForm button {
+        margin-top: 10px;
     }
 }
