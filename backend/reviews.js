@@ -50,11 +50,6 @@ const getRev = async (req, res) => {
 const postRev = async (req, res) => {
     const { username, reviewComment, rating } = req.body;
 
-    // //Проверяем, что все поля не пустые
-    // if (!username || !reviewComment || !rating) {
-    //     return res.status(400).json('Спасибо за отправленный отзыв! Вы можете вернуться на основную страницу.');
-    // }
-
     try {
         // Сохранение отзыва в базе данных
         const createdReview = await Review.create({
@@ -65,17 +60,13 @@ const postRev = async (req, res) => {
         console.log('Полученные данные:', username, reviewComment, rating);
 
         console.log('Отзыв успешно сохранен в базе данных:', createdReview.toJSON());
-        res.status(200).json({ message: 'Отзыв успешно сохранен' });
+        res.status(303).json({ message: 'Отзыв успешно сохранен', review: createdReview.toJSON() });
     } catch (error) {
         console.error('Ошибка при сохранении отзыва:', error);
         res.status(500).json({ error: error.message });
     }
-}
+};
 
-
-// app.listen(port, () => {
-//   console.log(`Сервер слушает по адресу http://localhost:${port}`);
-// });
 
 module.exports = {
     getRev,

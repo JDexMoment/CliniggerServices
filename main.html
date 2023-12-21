@@ -148,13 +148,13 @@
                     <input type="text" id="username" placeholder="Ваше имя" required>
                     <textarea  input type="text" id="review_comment" placeholder="Ваш отзыв" required></textarea>
                     <div class="rating" data-total-value="0">
-                        <div class="rating_item" select required data-item-value="5" onclick="handleRatingClick(this)">★</div>
-                        <div class="rating_item" select required data-item-value="4" onclick="handleRatingClick(this)">★</div>
-                        <div class="rating_item" select required data-item-value="3" onclick="handleRatingClick(this)">★</div>
-                        <div class="rating_item" select required data-item-value="2" onclick="handleRatingClick(this)">★</div>
-                        <div class="rating_item" select required data-item-value="1" onclick="handleRatingClick(this)">★</div>
+                        <div class="rating_item" selected data-item-value="5" onclick="handleRatingClick(this)">★</div>
+                        <div class="rating_item" selected data-item-value="4" onclick="handleRatingClick(this)">★</div>
+                        <div class="rating_item" selected data-item-value="3" onclick="handleRatingClick(this)">★</div>
+                        <div class="rating_item" selected data-item-value="2" onclick="handleRatingClick(this)">★</div>
+                        <div class="rating_item" selected data-item-value="1" onclick="handleRatingClick(this)">★</div>
                     </div>
-                    <button type="submit" id="submit-review" onclick="submitReview()">Отправить отзыв</button>
+                    <button type="submit" id="submit-review" onclick="return submitReview()">Отправить отзыв</button>
                 </form>
                 
             </div>
