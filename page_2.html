@@ -58,7 +58,7 @@
 
                         <form id="myForm" action="/submitForm" method="post">
                             <input type="text" id="name" name="name" placeholder="Введите ваше Имя" required><br>
-                            <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" required><br>
+                            <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" pattern="[0-9]+" title="Телефон должен содержать только цифры" required><br>
                             <button class="btn_entity" type="button" onclick="submitForm()">Отправить</button>
                         </form>
                     </div>
@@ -121,7 +121,7 @@
                 <p>Заполните форму и один из наших экспертов свяжется с вами в рабочее время, чтобы обсудить условия</p>
                 <form id="myForm2" action="/submitForm" method="post" class="contact_form">
                     <input type="text" id="name2" name="name" placeholder="Ваше имя" required>
-                    <input type="tel" id="phone2" name="phone" placeholder="Ваш телефон" required>
+                    <input type="tel" id="phone2" name="phone" placeholder="Введите ваш телефон" pattern="[0-9]+" title="Телефон должен содержать только цифры" required><br>
                     <button class="btn_entity" type="button" onclick="SubmitForm()">Отправить</button>
                 </form>
                 <a href="">Нажимая на кнопку «Отправить», я даю согласие на обработку персональных данных</a>

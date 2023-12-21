@@ -61,10 +61,17 @@ function clearForm() {
 
 function submitForm() {
   const name = document.getElementById('name').value;
-  const phone = document.getElementById('phone').value;
+  const phoneInput = document.getElementById("phone");
+  const phone = phoneInput.value;
+
   if (name.trim() === "" || phone.trim() === "") {
     alert("Заполните все обязательные поля.");
-  } else {
+  }
+  else if (!/^\d+$/.test(phone)) {
+    alert("Телефон должен содержать только цифры.");
+    return;
+  }
+  else {
     fetch('http://localhost:5000/submitForm', {
     method: 'POST',
     headers: {
