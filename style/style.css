@@ -242,6 +242,19 @@
 }
   
 /* card */
+.hideCardsButton {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: #000;
+    background-color: rgb(231, 245, 249);
+    font-style: italic;
+    width: 100%;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
 #card_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -379,6 +392,8 @@
     text-align: center; /* Выравнивание текста по центру */
     font-size: 20px;
     font-family: 'onest',Arial,sans-serif;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 .reviews_header span {
     color: #24ccfa;
@@ -388,8 +403,7 @@
 .reviews_wrapper {
     display: flex; 
     justify-content: space-between; 
-    max-width: 600px; 
-    max-height: 600px;
+    max-width: 800px; 
     margin: 0 auto; 
     margin-bottom: 40px;
     padding: 30px; 
@@ -401,22 +415,26 @@
 .reviews_list {
     width: 50%; 
     border-right: 1px solid #9a9a9a;
+    border-left: 1px solid #9a9a9a;
+    border: 1px solid #9a9a9a;
     max-height: 400px; 
     overflow-y: auto;
 }
 
 /* Стили для отдельного отзыва */
 .review {
-    margin-bottom: 20px; 
+    margin-bottom: 10px; 
     font-size: 19px;
     border-bottom: 1px solid #ccc; 
+    padding-left: 5px;
     padding-bottom: 10px;
+    
 }
 .review:last-child {
     border-bottom: none;
 }
 .review:first-child {
-    border-top: none;
+    border-bottom: none;
 }
 
 /* Дополнительные стили для формы отзыва */
@@ -427,11 +445,7 @@
     display: inline-flex;
     flex-direction: row-reverse;
 }
-#rating1,
-#rating2,
-#rating3,
-#rating4,
-#rating5 {
+#rating1, #rating2, #rating3, #rating4, #rating5 {
     font-size: 30px;
     color: #dcdcdc;
     color: orange;
@@ -465,7 +479,7 @@
 }
 /* Дополнительные стили для полей формы */
 #username, #review_comment {
-    padding: 0 20px;
+    padding: 5px 20px;
     margin-bottom: 10px;
     background: #e9eff6;
     border-radius: 20px;
@@ -476,9 +490,11 @@
 #review_comment{
     width: 80%;
     height: 150px;
+    font-size: 20px;
 }
 #username {
     width: 80%; 
+    font-size: 20px;
 }
 
 /* Дополнительные стили для кнопки отправки отзыва */
@@ -498,6 +514,8 @@
     font-weight: 500;
     font-size: 24px;
     color: #707981;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 /* Footer */
@@ -565,6 +583,15 @@
         width: 100%; 
         margin-bottom: 10px; 
     }
+    #footer {
+        margin-top: 30px;
+    }
+    #footer .image_logo img{
+        width: 150px;
+    }
+    .hideCardsButton {
+        display: flex;
+    }
 }
 /* адаптивность для гиф контейнера */
 @media (max-width: 900px) {
@@ -624,5 +651,29 @@
     }
     #text_gif_Low {
         font-size: 18px;
+    }
+}
+/* адаптивность для отзывов */
+@media (max-width: 480px) {
+    .reviews_wrapper{
+        flex-direction: column-reverse;
+        margin: 10px;
+    }
+    .reviews_list, #review_form{
+        width: 100%;
+    }
+    #review_form{
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+    }
+    .reviews_list{
+        min-height: 350px;
+    }
+    #review_comment{
+        max-height: 80px;
+    }
+    #review_comment, #username {
+        width: 85%;
+        font-size: 16px;
     }
 }
