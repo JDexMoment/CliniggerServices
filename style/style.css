@@ -47,6 +47,7 @@
     font-family: 'Roboto', sans-serif;
     color: #000000;
     text-decoration: none;
+    margin-right: 10px;
 }
 
 .toggle-button .icon-bar {
@@ -274,6 +275,9 @@
     font-family: 'onest',Arial,sans-serif;
     font-weight:normal;
 }
+#card4 p{
+    padding-bottom: 35px;
+}
 
 /* Стили для кнопки Заказать услуги */
 .btn_entity {
@@ -422,6 +426,15 @@
 .rating{
     display: inline-flex;
     flex-direction: row-reverse;
+}
+#rating1,
+#rating2,
+#rating3,
+#rating4,
+#rating5 {
+    font-size: 30px;
+    color: #dcdcdc;
+    color: orange;
 }
 .rating_item{
     font-size: 30px;
@@ -594,5 +607,22 @@
     }
     .drop_navigation.active{
         display: flex;
+    }
+    #gif_container{
+        height: 400px;
+    }
+    .text_gif {
+        top: 30%;
+    }
+    
+    .button_gif {
+        top:75%;
+        left: 15%;
+    }
+    #text_gif_Hight {
+        font-size: 40px;
+    }
+    #text_gif_Low {
+        font-size: 18px;
     }
 }

@@ -2,15 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { Sequelize, DataTypes } = require('sequelize');
 
-// const app = express();
-// const port = 5000;
-
-// app.use((req, res, next) => {
-//     res.header('Access-Control-Allow-Origin', '*');
-//     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-//     next();
-// });
-
 // Подключение к базе данных
 const sequelize = new Sequelize({
     dialect: 'sqlite',
@@ -42,18 +33,7 @@ const Review = sequelize.define('Review', {
     },
 });
 
-// Создание таблицы в базе данных (если ее нет)
-// sequelize.sync({force:true})
-//     .then(result => {
-//         //console.log(result);
-//         app.listen(5000);
-//     })
-//     .catch(err => {
-//         console.log(err);
-//     });
 sequelize.sync();
-
-// app.use(express.json());
 
 // Пример серверного маршрута с использованием Express
 const getRev = async (req, res) => {
@@ -66,16 +46,14 @@ const getRev = async (req, res) => {
       res.status(500).send('Ошибка сервера');
     }
 }
-  
-
 
 const postRev = async (req, res) => {
     const { username, reviewComment, rating } = req.body;
 
-    //Проверяем, что все поля не пустые
-    if (!username || !reviewComment || !rating) {
-        return res.status(400).json('Заполните все обязательные поля.');
-    }
+    // //Проверяем, что все поля не пустые
+    // if (!username || !reviewComment || !rating) {
+    //     return res.status(400).json('Спасибо за отправленный отзыв! Вы можете вернуться на основную страницу.');
+    // }
 
     try {
         // Сохранение отзыва в базе данных

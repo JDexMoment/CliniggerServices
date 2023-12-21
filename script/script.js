@@ -62,37 +62,26 @@ function clearForm() {
 function submitForm() {
   const name = document.getElementById('name').value;
   const phone = document.getElementById('phone').value;
-
-  fetch('http://localhost:5000/submitForm', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name, phone }),
-  })
-  .then(response => {
-      if (!response.ok) {
-          throw new Error(`Ошибка HTTP! Статус: ${response.status}`);
-      }
-      return response.json();
-  })
-  .then(data => {
-      if (data.status === 'success') {
-          document.getElementById('successMessage').style.display = 'block';
-      } else {
-          console.error('Сервер вернул ошибку:', data.error);
-      }
-  })
-  .catch(error => {
-      console.error('Ошибка при отправке запроса:', error);
-  });
-  hideMenu();
-  clearForm();
+  if (name.trim() === "" || phone.trim() === "") {
+    alert("Заполните все обязательные поля.");
+  } else {
+    fetch('http://localhost:5000/submitForm', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ name, phone }),
+    })
+    hideMenu();
+    clearForm();
+    alert("Ваша заявка записана, с вами обязательно свяжутся");
+  }
 }
 
 function handleRatingClick(clickedItem) {
   // Получаем все элементы с классом "rating_item"
-  const ratingItems = document.querySelectorAll(".rating_item");
+  var form = document.querySelector('.rating_item');
+  const ratingItems = form.querySelectorAll('[required]');
   
   // Убираем класс "selected" у всех элементов
   ratingItems.forEach(innerItem => {
@@ -117,46 +106,25 @@ function submitReview() {
   const selectedRatingItem = document.querySelector(".rating_item.selected");
   const ratingValue = selectedRatingItem ? selectedRatingItem.getAttribute("data-item-value") : null;
 
-  // Проверяем, что данные не являются пустыми или null
-  if (username && reviewComment && ratingValue) {
-    // Создание объекта reviewData с полученными данными
-    const reviewData = {
-      username: username,
-      reviewComment: reviewComment,
-      rating: ratingValue,
-    };
-
-    // Отправка данных на сервер
+  // Проверяем, что данные не являются пустыми или null и рейтинг выбран
+  if (username.trim() == "" || reviewComment.trim() == "" || ratingValue.trim() == "0") {
+    alert("Заполните все обязательные поля.");
+  } else {
     fetch('http://localhost:5000/submit-review', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(reviewData),
+      body: JSON.stringify({
+        username: username,
+        reviewComment: reviewComment,
+        rating: ratingValue,
+      }),
     })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Ошибка: ${response.status} ${response.statusText}`);
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log('Ответ от сервера:', data);
-      // Вместо этой строки убедитесь, что вы что-то делаете с данными, например, обновляете интерфейс
-      alert('Отзыв успешно отправлен'); 
-    })
-    .catch(error => {
-      console.error('Ошибка при отправке отзыва:', error.message);
-      // Вместо этой строки убедитесь, что вы что-то делаете в случае ошибки, например, выводите сообщение об ошибке
-      alert('Произошла ошибка при отправке отзыва');
-    });
-    console.log('Отправляемые данные:', reviewData);
-  } else {
-    console.error('Значение username, reviewComment или rating не должно быть пустым.');
+    alert("Спасибо за оставленный отзыв");
   }
 }
 
-// Пример JavaScript-кода на клиентской стороне
 document.addEventListener('DOMContentLoaded', function () {
   const reviewsList = document.querySelector('.reviews_list');
 
