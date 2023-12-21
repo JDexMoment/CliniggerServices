@@ -48,24 +48,33 @@ const getRev = async (req, res) => {
 }
 
 const postRev = async (req, res) => {
+    console.log(req.body); // Добавьте эту строку, чтобы увидеть, что содержит req.body
+
     const { username, reviewComment, rating } = req.body;
+
+    // Проверка данных
+    if (!username || !reviewComment || !rating) {
+        return res.status(400).json({ error: 'Отсутствуют необходимые данные' });
+    }
 
     try {
         // Сохранение отзыва в базе данных
         const createdReview = await Review.create({
-            username: username,
-            reviewComment: reviewComment,
-            rating: rating,
+            username,
+            reviewComment,
+            rating,
         });
-        console.log('Полученные данные:', username, reviewComment, rating);
 
+        console.log('Полученные данные:', username, reviewComment, rating);
         console.log('Отзыв успешно сохранен в базе данных:', createdReview.toJSON());
-        res.status(303).json({ message: 'Отзыв успешно сохранен', review: createdReview.toJSON() });
+        res.send(createdReview);
     } catch (error) {
         console.error('Ошибка при сохранении отзыва:', error);
         res.status(500).json({ error: error.message });
     }
 };
+
+
 
 
 module.exports = {

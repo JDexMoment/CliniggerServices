@@ -144,7 +144,7 @@
                         <p class="comment"></p>
                     </div>
                 </div>
-                <form id="review_form" action="http://localhost:5000/submit-review" method="POST">
+                <form id="review_form" action="http://localhost:5000/submit-review" method="post">
                     <h3>Оставьте отзыв!</h3>
                     <input type="text" id="username" placeholder="Ваше имя" required>
                     <textarea  input type="text" id="review_comment" placeholder="Ваш отзыв" required></textarea>
@@ -155,7 +155,7 @@
                         <div class="rating_item" selected data-item-value="2" onclick="handleRatingClick(this)">★</div>
                         <div class="rating_item" selected data-item-value="1" onclick="handleRatingClick(this)">★</div>
                     </div>
-                    <button type="submit" id="submit-review" onclick="return submitReview()">Отправить отзыв</button>
+                    <button type="button" id="submit-review" onclick="return submitReview()">Отправить отзыв</button>
                 </form>
                 
             </div>
